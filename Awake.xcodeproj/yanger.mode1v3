@@ -270,7 +270,6 @@
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>4D5C7E3410C9C7C900E32800</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>4D38AE0A10CEDD39006A7976</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
@@ -332,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D38AE8D10CEF74D006A7976</string>
+										<string>4D936E1410CF06DA0094C383</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
@@ -346,7 +345,7 @@
 											<string>4DC957CA10CDDAFC00FBFAE0</string>
 											<string>4DC9580710CE090B00FBFAE0</string>
 											<string>4D38AE0B10CEDD39006A7976</string>
-											<string>4DC9580610CE090B00FBFAE0</string>
+											<string>4D38AE8D10CEF74D006A7976</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -362,7 +361,6 @@
 											<string>4DC9575C10CDCB1400FBFAE0</string>
 											<string>4DC957BF10CDDA6800FBFAE0</string>
 											<string>4DC957CC10CDDAFC00FBFAE0</string>
-											<string>4D38AE0C10CEDD39006A7976</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -420,9 +418,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D38AE0E10CEDD39006A7976</string>
+				<string>4D936E1510CF06DA0094C383</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4D38AE0F10CEDD39006A7976</string>
+				<string>4D936E1610CF06DA0094C383</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -556,10 +554,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4DCA329210A65E5D0085ADDC</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/yanger/mystuff/programming/wakeup/Awake/Awake.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>17 351 1272 427 0 0 1280 778 </string>

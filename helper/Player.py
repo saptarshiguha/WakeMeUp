@@ -42,12 +42,14 @@ class Action(Player):
     vol=None
     def action(self, args, xtras=None):
         self.v= NSTask.alloc().init()
+        if type(args)==str:
+            args = args.split(" ")
         self.v.setLaunchPath_(args[0])
         self.v.setArguments_(args[1:])
         # v.setStandardOutput_(NSFileHandle.fileHandleWithNullDevice())
         # v.setStandardError_(NSFileHandle.fileHandleWithNullDevice())
         self.v.launch()
-        return v
+        return self.v
     def stop(self,args=None,xtras=None):
         if self.v:
             if isinstance(self.v,NSTask):
