@@ -44,6 +44,8 @@ class Action(Player):
         self.v= NSTask.alloc().init()
         if type(args)==str:
             args = args.split(" ")
+        elif type(args)==function:
+            args(args,xtras)
         self.v.setLaunchPath_(args[0])
         self.v.setArguments_(args[1:])
         # v.setStandardOutput_(NSFileHandle.fileHandleWithNullDevice())
