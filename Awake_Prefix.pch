@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Awake' target in the 'Awake' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

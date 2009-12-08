@@ -1,0 +1,8 @@
+A wakeup alarm written in PyObjc. User creates a 'playables' and 'wakeups' composed of playables.
+Extremely configurable with hooks for play,stop, snooze. Works with iTunes and Mplayer.
+Quite involved yet on the whole simple.
+
+User should be somewhat familiar with Python.
+
+
+See http://www.stat.purdue.edu/~sguha/awake for more details.
