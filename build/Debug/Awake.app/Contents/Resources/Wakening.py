@@ -57,10 +57,10 @@ class Runner(NSObject):
 
     def vol_fade_in(self):
         if self.play_info.play_claz.isMusical() and self.extras.get('volfade',True):
-            s = self.fadein.get('start',0)
-            e = self.fadein.get('end',100)
-            d = float(self.fadein.get('dur',float(90)))
-            f = self.fadein.get('F',self.linear_vol_change)
+            s = self.fadein.get('start',self.extras.get('fade_start',0))
+            e = self.fadein.get('end',self.extras.get('fade_end',100))
+            d = float(self.fadein.get('dur',float(self.extras.get('fade_dur',90))))
+            f = self.fadein.get('F',self.extras.get('fade_F',self.linear_vol_change))
             t = 0.0
             self.performSelector_withObject_afterDelay_("_vol_fade_in",(s,e,f,t,d),0.1)
     def linear_vol_change(self, svol,evol,t):
