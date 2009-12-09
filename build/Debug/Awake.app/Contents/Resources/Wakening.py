@@ -61,6 +61,8 @@ class Runner(NSObject):
             e = self.fadein.get('end',self.extras.get('fade_end',100))
             d = float(self.fadein.get('dur',float(self.extras.get('fade_dur',90))))
             f = self.fadein.get('F',self.extras.get('fade_F',self.linear_vol_change))
+            if(self.fadein.has_key('F') and self.fadein['F'] is None):
+                f  = self.linear_vol_change
             t = 0.0
             self.performSelector_withObject_afterDelay_("_vol_fade_in",(s,e,f,t,d),0.1)
     def linear_vol_change(self, svol,evol,t):
