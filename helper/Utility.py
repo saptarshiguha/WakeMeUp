@@ -68,9 +68,19 @@ def mailViaGmail(to, subject, text,attach=None,gmailuser=None, gmailpwd=None):
 		msg['Subject'] = subject
 		msg.attach(MIMEText(text))
 		if attach:
-			attach = glob.glob(os.path.abspath(os.path.normpath(os.path.expanduser(attach))))
+			attach=('~/tmp/*.py','/tmp/togo')
+			if isinstance(attach, str):
+				attach = (attach,)
+			v=[]
+			for y in attach:
+				v =v+ glob.glob(os.path.abspath(os.path.normpath(os.path.expanduser(y))))
+			attach = v
+			#remove duplicates
+			v={}
+			for x in attach:
+				v[x]=1
+			attach = v.keys()
 			if len(attach)>0: sys.stderr.write("[gmail mailer] Attaching %d files\n" % len(attach))
-			if len(attach)>5: sys.stderr.write("Attaching more than 5 files ...\n")
 			for x in attach:
 				part = MIMEBase('application', 'octet-stream')
 				part.set_payload(open(x, 'rb').read())
