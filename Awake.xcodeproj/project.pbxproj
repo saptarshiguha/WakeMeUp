@@ -15,6 +15,7 @@
 		4D5C7E3E10C9C7C900E32800 /* Utility.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C7E3710C9C7C900E32800 /* Utility.py */; };
 		4D5C7E3F10C9C7C900E32800 /* WakeMeUp.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C7E3810C9C7C900E32800 /* WakeMeUp.py */; };
 		4D5C7E4010C9C7C900E32800 /* Wakening.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C7E3910C9C7C900E32800 /* Wakening.py */; };
+		4D936E8110D056450094C383 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 4D936E8010D056450094C383 /* COPYING */; };
 		4DB1C59110A65FB600C85450 /* wakeup.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4DB1C59010A65FB600C85450 /* wakeup.icns */; };
 		4DC956E310CDBD1C00FBFAE0 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 4DC956E110CDBBBF00FBFAE0 /* Growl Registration Ticket.growlRegDict */; };
 		77631A270C06C501005415CB /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77631A260C06C501005415CB /* Python.framework */; };
@@ -41,6 +42,7 @@
 		4D5C7E3710C9C7C900E32800 /* Utility.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Utility.py; sourceTree = "<group>"; };
 		4D5C7E3810C9C7C900E32800 /* WakeMeUp.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = WakeMeUp.py; sourceTree = "<group>"; };
 		4D5C7E3910C9C7C900E32800 /* Wakening.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Wakening.py; sourceTree = "<group>"; };
+		4D936E8010D056450094C383 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		4DB1C59010A65FB600C85450 /* wakeup.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = wakeup.icns; sourceTree = "<group>"; };
 		4DC956E110CDBBBF00FBFAE0 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		77631A260C06C501005415CB /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = /System/Library/Frameworks/Python.framework; sourceTree = "<absolute>"; };
@@ -128,6 +130,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4D936E8010D056450094C383 /* COPYING */,
 				4DB1C59010A65FB600C85450 /* wakeup.icns */,
 				4DC956E110CDBBBF00FBFAE0 /* Growl Registration Ticket.growlRegDict */,
 				77C8C1F70C07829500965286 /* MainMenu.xib */,
@@ -212,6 +215,7 @@
 				4D5C7E3F10C9C7C900E32800 /* WakeMeUp.py in Resources */,
 				4D5C7E4010C9C7C900E32800 /* Wakening.py in Resources */,
 				4D55DA4510CB456300641879 /* LogWindowController.py in Resources */,
+				4D936E8110D056450094C383 /* COPYING in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>4D936E7D10D055450094C383</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Info.plist</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>4D936E7E10D055450094C383</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Info.plist</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>4D98D2BF10D056B3005207E4</string>
+						<key>history</key>
+						<array>
+							<string>4D936E7F10D055450094C383</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {878, 662}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>201 61 878 703 0 0 1280 778 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -231,6 +272,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -269,6 +312,7 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>4D5C7E3410C9C7C900E32800</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -278,6 +322,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>4</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -312,14 +358,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Growl Registration Ticket.growlRegDict</string>
+								<string>AwakeAppDelegate.py</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +371,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Growl Registration Ticket.growlRegDict</string>
+										<string>AwakeAppDelegate.py</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D936E1410CF06DA0094C383</string>
+										<string>4D98D2BE10D056B3005207E4</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
@@ -340,12 +384,15 @@
 											<string>4D0ED9B010CD9B99009DD373</string>
 											<string>4DC956B910CDB75E00FBFAE0</string>
 											<string>4DC956BA10CDB75E00FBFAE0</string>
-											<string>4DC956BC10CDB75E00FBFAE0</string>
 											<string>4DC957BA10CDDA6800FBFAE0</string>
 											<string>4DC957CA10CDDAFC00FBFAE0</string>
-											<string>4DC9580710CE090B00FBFAE0</string>
+											<string>4D936E2A10CFEA230094C383</string>
+											<string>4D936E4610D049640094C383</string>
+											<string>4D936E7610D055450094C383</string>
+											<string>4D936E7710D055450094C383</string>
+											<string>4D98D2B210D05690005207E4</string>
+											<string>4D98D2B910D056A4005207E4</string>
 											<string>4D38AE0B10CEDD39006A7976</string>
-											<string>4D38AE8D10CEF74D006A7976</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -361,6 +408,10 @@
 											<string>4DC9575C10CDCB1400FBFAE0</string>
 											<string>4DC957BF10CDDA6800FBFAE0</string>
 											<string>4DC957CC10CDDAFC00FBFAE0</string>
+											<string>4D936E4810D049640094C383</string>
+											<string>4D936E7910D055450094C383</string>
+											<string>4D98D2B310D05690005207E4</string>
+											<string>4D98D2BA10D056A4005207E4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -418,9 +469,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D936E1510CF06DA0094C383</string>
+				<string>4D98D2B510D05690005207E4</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4D936E1610CF06DA0094C383</string>
+				<string>4D98D2B610D05690005207E4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -554,6 +605,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>4D98D2C010D056B3005207E4</string>
+		<string>4D936E7D10D055450094C383</string>
 		<string>/Users/yanger/mystuff/programming/wakeup/Awake/Awake.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -634,7 +687,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4DCA329210A65E5D0085ADDC</string>
-				<string>4D38AE8E10CEF74D006A7976</string>
+				<string>4D936E6910D0553D0094C383</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -754,13 +807,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>4D38AE8F10CEF74D006A7976</string>
+				<string>4D936E6A10D0553D0094C383</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>4D38AE9010CEF74D006A7976</string>
-				<string>4D38AE9110CEF74D006A7976</string>
-				<string>4D38AE9210CEF74D006A7976</string>
-				<string>4D38AE9310CEF74D006A7976</string>
-				<string>4D38AE9410CEF74D006A7976</string>
+				<string>4D936E6B10D0553D0094C383</string>
+				<string>4D936E6C10D0553D0094C383</string>
+				<string>4D936E6D10D0553D0094C383</string>
+				<string>4D936E6E10D0553D0094C383</string>
+				<string>4D936E6F10D0553D0094C383</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -787,12 +840,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string></string>
+										<string>InfoPlist.strings</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -813,8 +868,6 @@
 							<string>212pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -850,8 +903,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>4DC957DA10CDDB6800FBFAE0</string>
-				<string>4DC957DB10CDDB6800FBFAE0</string>
+				<string>4D936E7310D0553D0094C383</string>
+				<string>4D936E7410D0553D0094C383</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>
@@ -879,8 +932,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -916,7 +967,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>4D38AE9510CEF74D006A7976</string>
+				<string>4D936E7510D0553D0094C383</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -926,7 +977,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
