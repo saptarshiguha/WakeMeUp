@@ -71,6 +71,7 @@ class Configurator:
         self.env={}
         dd = { 'URL': iTunesURL, 'PLAYLIST':iTunesPlaylist, 'SMART': iTunesSmartPlaylist, 'MPlayer':MPlayer,'ACTION':Action
                ,'play':self.addPlayable, 'wakeup':self.addWakeup,'run_appscript':runAppScriptCommand,'ENV':self.env
+               ,'mail_gmail':mailViaGmail
                }
         self.playables={}
         self.wakeups = []

@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4D98D2BF10D056B3005207E4</string>
+						<string>4D0B844D10D061520009194C</string>
 						<key>history</key>
 						<array>
-							<string>4D936E7F10D055450094C383</string>
+							<string>4D98D2CF10D05845005207E4</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -322,8 +322,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
-									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -363,7 +361,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AwakeAppDelegate.py</string>
+								<string>main.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -371,17 +369,15 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>AwakeAppDelegate.py</string>
+										<string>main.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D98D2BE10D056B3005207E4</string>
+										<string>4D0B844A10D061520009194C</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
 											<string>4D55DA4810CB458900641879</string>
-											<string>4D0ED9AF10CD9B99009DD373</string>
-											<string>4D0ED9B010CD9B99009DD373</string>
 											<string>4DC956B910CDB75E00FBFAE0</string>
 											<string>4DC956BA10CDB75E00FBFAE0</string>
 											<string>4DC957BA10CDDA6800FBFAE0</string>
@@ -389,10 +385,15 @@
 											<string>4D936E2A10CFEA230094C383</string>
 											<string>4D936E4610D049640094C383</string>
 											<string>4D936E7610D055450094C383</string>
-											<string>4D936E7710D055450094C383</string>
 											<string>4D98D2B210D05690005207E4</string>
 											<string>4D98D2B910D056A4005207E4</string>
-											<string>4D38AE0B10CEDD39006A7976</string>
+											<string>4D98D2C210D05845005207E4</string>
+											<string>4D98D2C310D05845005207E4</string>
+											<string>4D98D2C410D05845005207E4</string>
+											<string>4D98D2C510D05845005207E4</string>
+											<string>4D98D2C610D05845005207E4</string>
+											<string>4D98D2C710D05845005207E4</string>
+											<string>4D98D2CE10D05845005207E4</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -411,7 +412,9 @@
 											<string>4D936E4810D049640094C383</string>
 											<string>4D936E7910D055450094C383</string>
 											<string>4D98D2B310D05690005207E4</string>
-											<string>4D98D2BA10D056A4005207E4</string>
+											<string>4D98D2CA10D05845005207E4</string>
+											<string>4D98D2CC10D05845005207E4</string>
+											<string>4D98D2CD10D05845005207E4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -469,9 +472,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D98D2B510D05690005207E4</string>
+				<string>4D0B844B10D061520009194C</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4D98D2B610D05690005207E4</string>
+				<string>4D0B844C10D061520009194C</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -605,9 +608,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4D98D2C010D056B3005207E4</string>
+		<string>4DCA329210A65E5D0085ADDC</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4D936E7D10D055450094C383</string>
 		<string>/Users/yanger/mystuff/programming/wakeup/Awake/Awake.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>17 351 1272 427 0 0 1280 778 </string>
@@ -687,7 +692,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4DCA329210A65E5D0085ADDC</string>
-				<string>4D936E6910D0553D0094C383</string>
+				<string>4D0B844E10D061520009194C</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -807,13 +812,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>4D936E6A10D0553D0094C383</string>
+				<string>4D0B844F10D061520009194C</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>4D936E6B10D0553D0094C383</string>
-				<string>4D936E6C10D0553D0094C383</string>
-				<string>4D936E6D10D0553D0094C383</string>
-				<string>4D936E6E10D0553D0094C383</string>
-				<string>4D936E6F10D0553D0094C383</string>
+				<string>4D0B845010D061520009194C</string>
+				<string>4D0B845110D061520009194C</string>
+				<string>4D0B845210D061520009194C</string>
+				<string>4D0B845310D061520009194C</string>
+				<string>4D0B845410D061520009194C</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -932,6 +937,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -967,7 +974,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>4D936E7510D0553D0094C383</string>
+				<string>4D0B845510D061520009194C</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -977,7 +984,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

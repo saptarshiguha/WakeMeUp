@@ -42,6 +42,57 @@ def runAppScriptCommand(s):
         ap = NSAppleScript.alloc().initWithSource_(s)
         ap.executeAndReturnError_(None)
 
+def getPasswordFromKeychain():
+	import subprocess
+	cmd0="security find-internet-password -gs %s 1>/dev/null" % "smtp.gmail.com"
+	p = subprocess.Popen(cmd0, shell=True, bufsize=0, stderr=subprocess.PIPE,close_fds=True).stderr.readline()
+	if p==None or len(p)==0 or not p.startswith("password"):
+		return ''
+	else:
+		pw=p.split()[1]
+		return pw.split("\"")[1]
+
+def mailViaGmail(to, subject, text,attach=None,gmailuser=None, gmailpwd=None):
+	try:
+		import smtplib
+		from email.MIMEMultipart import MIMEMultipart
+		from email.MIMEBase import MIMEBase
+		from email.MIMEText import MIMEText
+		from email import Encoders
+		import os,glob,sys
+		if not gmailpwd:
+			gmailpwd = getPasswordFromKeychain()
+		msg = MIMEMultipart()
+		msg['From'] = gmailuser
+		msg['To'] = to
+		msg['Subject'] = subject
+		msg.attach(MIMEText(text))
+		if attach:
+			attach = glob.glob(os.path.abspath(os.path.normpath(os.path.expanduser(attach))))
+			if len(attach)>0: sys.stderr.write("[gmail mailer] Attaching %d files\n" % len(attach))
+			if len(attach)>5: sys.stderr.write("Attaching more than 5 files ...\n")
+			for x in attach:
+				part = MIMEBase('application', 'octet-stream')
+				part.set_payload(open(x, 'rb').read())
+				Encoders.encode_base64(part)
+				part.add_header('Content-Disposition',
+						'attachment; filename="%s"' % os.path.basename(x))
+				msg.attach(part)
+		mailServer = smtplib.SMTP("smtp.gmail.com", 587)
+		mailServer.ehlo()
+		mailServer.starttls()
+		mailServer.ehlo()
+		mailServer.login(gmailuser, gmailpwd)
+		mailServer.sendmail(gmailuser, to, msg.as_string())
+		mailServer.close()
+		return True
+	except:
+		import sys
+		sys.stderr.write("GMAIL ERROR:\n")
+		import traceback
+		traceback.print_exc()
+		return False
+
 class AwakeLog(NSObject):
 	logcontroller = None
 	def initWithInfo_(self, info):
