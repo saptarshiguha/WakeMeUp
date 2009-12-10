@@ -118,8 +118,28 @@ class Configurator:
             return
         if type(start)==int or type(start)==float:
             wake_time = current_time+datetime.timedelta(seconds=abs(int(start)))
+        elif type(start)==list or type(start)==tuple:
+            if len(start)==2:
+                wake_time = current_time.replace(month=hour=start[0],minute=start[1],second=0)
+            elif len(start)==3:
+                wake_time = current_time.replace(day=start[0],hour=start[1],minute=start[2],second=0)
+            elif len(start)==4:
+                wake_time = current_time.replace(month=start[0],day=start[1],hour=start[2],minute=start[3],second=0)
+            elif len(start)==5:
+                wake_time = current_time.replace(year=start[0],month=start[1],day=start[2],hour=start[3],minute=start[4],second=0)
+            else:
+                raise ValueError("Start time is too long %s" % str(start))
+        elif type(start)==dict:
+            second=0
+            minute = start.get('min',current_time.minute)
+            hr = start.get('hr',current_time.hour)
+            day = start.get('day',current_time.day)
+            month = start.get('mon',current_time.month)
+            year = start.get('yr',current_time.year)
+            wake_time = current_time.replace(year=year,month=month,day=day,hour=hr,minute=minute,second=0)
         else:
-            wake_time = current_time.replace(hour=start[0],minute=start[1],second=0)
+            raise ValueError("Strangest Start time: %s" % str(start))
+        
         if(wake_time<current_time):
             return
         if play is None:
