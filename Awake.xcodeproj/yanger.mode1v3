@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4D0B844D10D061520009194C</string>
+						<string>4D0B848210D095E40009194C</string>
 						<key>history</key>
 						<array>
 							<string>4D98D2CF10D05845005207E4</string>
@@ -313,6 +313,7 @@
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>4D5C7E3410C9C7C900E32800</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -322,11 +323,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>21</integer>
+									<integer>20</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 368}}</string>
+							<string>{{0, 190}, {186, 368}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -373,7 +376,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D0B844A10D061520009194C</string>
+										<string>4D0B848110D095E40009194C</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
@@ -611,8 +614,8 @@
 		<string>4DCA329210A65E5D0085ADDC</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4D936E7D10D055450094C383</string>
-		<string>/Users/yanger/mystuff/programming/wakeup/Awake/Awake.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/yanger/mystuff/programming/wakeup/Awake/Awake.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>17 351 1272 427 0 0 1280 778 </string>
