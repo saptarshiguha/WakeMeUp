@@ -143,8 +143,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 282152047;
-			PBXWorkspaceStateSaveDate = 282152047;
+			PBXPerProjectTemplateStateSaveDate = 282163147;
+			PBXWorkspaceStateSaveDate = 282163147;
 		};
 		perUserProjectItems = {
 			4D0ED9B310CD9B99009DD373 = 4D0ED9B310CD9B99009DD373 /* PBXTextBookmark */;
@@ -158,15 +158,13 @@
 			4D5C7E4910C9C95300E32800 = 4D5C7E4910C9C95300E32800 /* PBXTextBookmark */;
 			4D7A6FD110D0C4DE002E7AA3 = 4D7A6FD110D0C4DE002E7AA3 /* PBXTextBookmark */;
 			4D7A6FD210D0C4DE002E7AA3 = 4D7A6FD210D0C4DE002E7AA3 /* PlistBookmark */;
-			4D7DC66710D14C7A005F195E /* PBXTextBookmark */ = 4D7DC66710D14C7A005F195E /* PBXTextBookmark */;
-			4D7DC66A10D14C7A005F195E /* PlistBookmark */ = 4D7DC66A10D14C7A005F195E /* PlistBookmark */;
+			4D7DC66D10D15F00005F195E = 4D7DC66D10D15F00005F195E /* PBXTextBookmark */;
+			4D7DC66E10D15F00005F195E = 4D7DC66E10D15F00005F195E /* PlistBookmark */;
 			4D936E2A10CFEA230094C383 = 4D936E2A10CFEA230094C383 /* PBXTextBookmark */;
 			4D936E4610D049640094C383 = 4D936E4610D049640094C383 /* PBXTextBookmark */;
 			4D936E4810D049640094C383 = 4D936E4810D049640094C383 /* PBXTextBookmark */;
 			4D936E7610D055450094C383 = 4D936E7610D055450094C383 /* PlistBookmark */;
 			4D936E7910D055450094C383 = 4D936E7910D055450094C383 /* PlistBookmark */;
-			4D95759510D0C2E8004FCAA5 = 4D95759510D0C2E8004FCAA5 /* PBXTextBookmark */;
-			4D95759610D0C2E8004FCAA5 = 4D95759610D0C2E8004FCAA5 /* PlistBookmark */;
 			4D98D2B210D05690005207E4 = 4D98D2B210D05690005207E4 /* PBXTextBookmark */;
 			4D98D2B310D05690005207E4 = 4D98D2B310D05690005207E4 /* PBXTextBookmark */;
 			4D98D2B910D056A4005207E4 = 4D98D2B910D056A4005207E4 /* PBXTextBookmark */;
@@ -188,6 +186,8 @@
 			4DC957BF10CDDA6800FBFAE0 = 4DC957BF10CDDA6800FBFAE0 /* PBXTextBookmark */;
 			4DC957CA10CDDAFC00FBFAE0 = 4DC957CA10CDDAFC00FBFAE0 /* PBXTextBookmark */;
 			4DC957CC10CDDAFC00FBFAE0 = 4DC957CC10CDDAFC00FBFAE0 /* PBXTextBookmark */;
+			4DE11DD210D177CD0033A088 /* PBXTextBookmark */ = 4DE11DD210D177CD0033A088 /* PBXTextBookmark */;
+			4DE11DD510D177CD0033A088 /* PlistBookmark */ = 4DE11DD510D177CD0033A088 /* PlistBookmark */;
 		};
 		sourceControlManager = 4DCA329410A65E5D0085ADDC /* Source Control */;
 		userBuildSettings = {
@@ -195,9 +195,9 @@
 	};
 	29B97316FDCFA39411CA2CEA /* main.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1003, 725}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{184, 794}";
+			sepNavIntBoundsRect = "{{0, 0}, {1003, 731}}";
+			sepNavSelRange = "{1216, 17}";
+			sepNavVisRange = "{758, 773}";
 			sepNavWindowFrame = "{{15, 14}, {878, 759}}";
 		};
 	};
@@ -367,17 +367,17 @@
 		rLen = 0;
 		rLoc = 2147483647;
 	};
-	4D7DC66710D14C7A005F195E /* PBXTextBookmark */ = {
+	4D7DC66D10D15F00005F195E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
-		name = "main.m: 1";
-		rLen = 0;
-		rLoc = 0;
+		name = "main.m: 34";
+		rLen = 17;
+		rLoc = 1216;
 		rType = 0;
-		vrLen = 794;
-		vrLoc = 184;
+		vrLen = 773;
+		vrLoc = 758;
 	};
-	4D7DC66A10D14C7A005F195E /* PlistBookmark */ = {
+	4D7DC66E10D15F00005F195E /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
 		fallbackIsa = PBXBookmark;
@@ -437,27 +437,6 @@
 		rLoc = 2147483647;
 	};
 	4D936E7910D055450094C383 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = /Users/yanger/mystuff/programming/wakeup/Awake/Info.plist;
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	4D95759510D0C2E8004FCAA5 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
-		name = "main.m: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 794;
-		vrLoc = 184;
-	};
-	4D95759610D0C2E8004FCAA5 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
 		fallbackIsa = PBXBookmark;
@@ -771,6 +750,27 @@
 	4DCA329510A65E5D0085ADDC /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
+	};
+	4DE11DD210D177CD0033A088 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 34";
+		rLen = 17;
+		rLoc = 1216;
+		rType = 0;
+		vrLen = 773;
+		vrLoc = 758;
+	};
+	4DE11DD510D177CD0033A088 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = /Users/yanger/mystuff/programming/wakeup/Awake/Info.plist;
+		rLen = 0;
+		rLoc = 2147483647;
 	};
 	77631A3E0C0748CF005415CB /* main.py */ = {
 		uiCtxt = {

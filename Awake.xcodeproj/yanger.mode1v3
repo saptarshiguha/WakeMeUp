@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4D7DC66A10D14C7A005F195E</string>
+						<string>4DE11DD510D177CD0033A088</string>
 						<key>history</key>
 						<array>
-							<string>4D7A6FD210D0C4DE002E7AA3</string>
+							<string>4D7DC66E10D15F00005F195E</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -272,8 +272,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -359,6 +357,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -376,7 +376,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D7DC66710D14C7A005F195E</string>
+										<string>4DE11DD210D177CD0033A088</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
@@ -396,7 +396,7 @@
 											<string>4D98D2C510D05845005207E4</string>
 											<string>4D98D2C610D05845005207E4</string>
 											<string>4D98D2C710D05845005207E4</string>
-											<string>4D7A6FD110D0C4DE002E7AA3</string>
+											<string>4D7DC66D10D15F00005F195E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -475,9 +475,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D7DC66810D14C7A005F195E</string>
+				<string>4DE11DD310D177CD0033A088</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4D7DC66910D14C7A005F195E</string>
+				<string>4DE11DD410D177CD0033A088</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -611,7 +611,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4DCA329210A65E5D0085ADDC</string>
 		<string>4D936E7D10D055450094C383</string>
 		<string>/Users/yanger/mystuff/programming/wakeup/Awake/Awake.xcodeproj</string>
 	</array>

@@ -120,7 +120,7 @@ class Configurator:
             wake_time = current_time+datetime.timedelta(seconds=abs(int(start)))
         elif type(start)==list or type(start)==tuple:
             if len(start)==2:
-                wake_time = current_time.replace(month=hour=start[0],minute=start[1],second=0)
+                wake_time = current_time.replace(hour=start[0],minute=start[1],second=0)
             elif len(start)==3:
                 wake_time = current_time.replace(day=start[0],hour=start[1],minute=start[2],second=0)
             elif len(start)==4:
