@@ -90,3 +90,7 @@ class AwakeAppDelegate(NSObject):
 
     def snooze_(self,sender):
         self.waka.snooze()
+
+    def openconfigfile_(self,sender):
+        cfg = self.waka.getEnv().get('CONFIG_FILE',self.cfgfile)
+        os.system("open %s" % cfg)
