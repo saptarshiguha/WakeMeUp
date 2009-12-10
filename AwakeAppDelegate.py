@@ -54,7 +54,8 @@ class AwakeAppDelegate(NSObject):
         self.performSelector_withObject_afterDelay_("refreshme",None,sec)
     def refreshme(self):
         self.awakelog.info("A new day has started, let's reload")
-        self.reload_(None)
+        if self.waka.getEnv().get(HOOKS['NEW_DAY_RELOAD'],True):
+            self.reload_(None)
     def notifyfromsleep(self):
         nc = NSWorkspace.sharedWorkspace().notificationCenter()
         nc.addObserver_selector_name_object_(

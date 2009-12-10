@@ -36,6 +36,7 @@ HOOKS={'ONAWAKE':"on_awake"
        ,"SNOOZETIME":"snooze_time"
        ,"ACTION_CMD":"action_cmd"
        ,"ACTION_CMD_STOP":"action_cmd_stop"
+       ,'NEW_DAY_RELOAD':'reload_new_day'
        }
 
 def runAppScriptCommand(s):
