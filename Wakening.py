@@ -46,15 +46,19 @@ class Runner(NSObject):
         self.controller = None
     def start(self):
         if self.extras.get(HOOKS['ONPREPLAY'],None):
-            self.extras[HOOKS['ONPREPLAY']](self)
-        self.controller = self.play_info.play_claz.alloc().initWithValue_(self.extras)
-        if self.end_time:
-            delta = (self.end_time - self.wake_time).seconds
-            self.performSelector_withObject_afterDelay_("stop",None,delta)
-        s=self.fadein.get('start',0)
-        self.controller.volume_set(s)
-        self.controller.start(self.play_info.how,self.extras)
-        self.vol_fade_in()
+            willplay = self.extras[HOOKS['ONPREPLAY']](self)
+            if willplay is None: willplay = True
+        else:
+            willplay = True
+        if willplay:
+            self.controller = self.play_info.play_claz.alloc().initWithValue_(self.extras)
+            if self.end_time:
+                delta = (self.end_time - self.wake_time).seconds
+                self.performSelector_withObject_afterDelay_("stop",None,delta)
+            s=self.fadein.get('start',0)
+            self.controller.volume_set(s)
+            self.controller.start(self.play_info.how,self.extras)
+            self.vol_fade_in()
         
     def schedule_to_play(self,basetime):
         timedelta = (self.wake_time - basetime).seconds

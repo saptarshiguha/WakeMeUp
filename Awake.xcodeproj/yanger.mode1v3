@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4D7A6FC510D0C39A002E7AA3</string>
+						<string>4D7DC66A10D14C7A005F195E</string>
 						<key>history</key>
 						<array>
-							<string>4D95759610D0C2E8004FCAA5</string>
+							<string>4D7A6FD210D0C4DE002E7AA3</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -329,7 +329,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 30}, {186, 368}}</string>
+							<string>{{0, 54}, {186, 368}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -376,7 +376,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D7A6FC210D0C39A002E7AA3</string>
+										<string>4D7DC66710D14C7A005F195E</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
@@ -396,7 +396,7 @@
 											<string>4D98D2C510D05845005207E4</string>
 											<string>4D98D2C610D05845005207E4</string>
 											<string>4D98D2C710D05845005207E4</string>
-											<string>4D95759510D0C2E8004FCAA5</string>
+											<string>4D7A6FD110D0C4DE002E7AA3</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -475,9 +475,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D7A6FC310D0C39A002E7AA3</string>
+				<string>4D7DC66810D14C7A005F195E</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4D7A6FC410D0C39A002E7AA3</string>
+				<string>4D7DC66910D14C7A005F195E</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -611,8 +611,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4DCA329210A65E5D0085ADDC</string>
 		<string>4D936E7D10D055450094C383</string>
 		<string>/Users/yanger/mystuff/programming/wakeup/Awake/Awake.xcodeproj</string>
@@ -695,7 +693,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4DCA329210A65E5D0085ADDC</string>
-				<string>4D7A6FC610D0C39A002E7AA3</string>
+				<string>4D7DC66B10D14C7A005F195E</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
