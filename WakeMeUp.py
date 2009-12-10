@@ -57,6 +57,7 @@ class Waka(NSObject):
                 i.cancel()
         if self.running:
             self.running.cancel()
+        NSObject.cancelPreviousPerformRequestsWithTarget_(self)
     def snooze(self):
         if self.running:
             self.running.stop({'snooze':True})

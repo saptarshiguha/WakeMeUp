@@ -43,7 +43,8 @@ class AwakeAppDelegate(NSObject):
     def cancelAllPerforms(self):
         # NSObject.cancelPreviousPerformRequestsWithTarget_(self.waka)
         self.waka.cancelRequests()
-        
+        NSObject.cancelPreviousPerformRequestsWithTarget_(self)
+
     def setAlarmForNextDay(self):
         v = datetime.datetime.today()
         delta= datetime.timedelta(days=1)
