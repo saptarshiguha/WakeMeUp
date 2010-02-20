@@ -96,7 +96,7 @@ class iTunesBase(Player):
     def stop(self,args=None,xtras=None):
         os.system("osascript -e 'tell application \"iTunes\" to stop'")
     def volume_set(self, vol):
-        print("VOLUME SET=="+str(vol))
+        ##print("VOLUME SET=="+str(vol))
         self.vol=str(int(vol))
         runAppScriptCommand("tell application \"iTunes\" to set sound volume to %s" % self.vol)
     def volume(self,vol):
