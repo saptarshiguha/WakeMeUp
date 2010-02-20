@@ -55,8 +55,8 @@ class Runner(NSObject):
             if self.end_time:
                 delta = (self.end_time - self.wake_time).seconds
                 self.performSelector_withObject_afterDelay_("stop",None,delta)
-            s=self.fadein.get('start',0)
-            self.controller.volume_set(s)
+            # s=self.fadein.get('start',0)
+            # self.controller.volume_set(s)
             self.controller.start(self.play_info.how,self.extras)
             self.vol_fade_in()
         

@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -272,6 +270,7 @@
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>4D5C7E3410C9C7C900E32800</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
@@ -282,13 +281,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>9</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 368}}</string>
+							<string>{{0, 0}, {186, 647}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -300,14 +299,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {203, 386}}</string>
+						<string>{{0, 0}, {203, 665}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>17 351 1272 427 0 0 1280 778 </string>
+						<string>2 72 1278 706 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -318,12 +317,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AwakeAppDelegate.py</string>
+								<string>WakeMeUp.py</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,31 +332,28 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>AwakeAppDelegate.py</string>
+										<string>WakeMeUp.py</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D53334510D1B5C8006AEC8C</string>
+										<string>4DCEFDCD1127C207000B98EB</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
 											<string>4D55DA4810CB458900641879</string>
 											<string>4DC956B910CDB75E00FBFAE0</string>
 											<string>4DC956BA10CDB75E00FBFAE0</string>
-											<string>4DC957BA10CDDA6800FBFAE0</string>
-											<string>4DC957CA10CDDAFC00FBFAE0</string>
 											<string>4D936E2A10CFEA230094C383</string>
-											<string>4D936E4610D049640094C383</string>
 											<string>4D936E7610D055450094C383</string>
 											<string>4D98D2B210D05690005207E4</string>
 											<string>4D98D2B910D056A4005207E4</string>
 											<string>4D98D2C310D05845005207E4</string>
-											<string>4D98D2C410D05845005207E4</string>
 											<string>4D98D2C510D05845005207E4</string>
-											<string>4D98D2C610D05845005207E4</string>
-											<string>4D98D2C710D05845005207E4</string>
 											<string>4D53334310D1B5C8006AEC8C</string>
-											<string>4D98D2C210D05845005207E4</string>
+											<string>4DA7D6D710D1C49500B7A9C8</string>
+											<string>4DA7D6D810D1C49500B7A9C8</string>
+											<string>4DD9E8E810D2B94A0034D6F9</string>
+											<string>4D98D2C610D05845005207E4</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -369,15 +367,11 @@
 											<string>4DC956BF10CDB75E00FBFAE0</string>
 											<string>4DC956C010CDB75E00FBFAE0</string>
 											<string>4DC9575C10CDCB1400FBFAE0</string>
-											<string>4DC957BF10CDDA6800FBFAE0</string>
-											<string>4DC957CC10CDDAFC00FBFAE0</string>
-											<string>4D936E4810D049640094C383</string>
 											<string>4D936E7910D055450094C383</string>
 											<string>4D98D2B310D05690005207E4</string>
 											<string>4D98D2CA10D05845005207E4</string>
 											<string>4D98D2CC10D05845005207E4</string>
 											<string>4D98D2CD10D05845005207E4</string>
-											<string>4D53334410D1B5C8006AEC8C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -389,14 +383,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1064, 267}}</string>
+								<string>{{0, 0}, {1070, 546}}</string>
 								<key>RubberWindowFrame</key>
-								<string>17 351 1272 427 0 0 1280 778 </string>
+								<string>2 72 1278 706 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>267pt</string>
+							<string>546pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -409,9 +403,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 272}, {1064, 114}}</string>
+								<string>{{0, 551}, {1070, 114}}</string>
 								<key>RubberWindowFrame</key>
-								<string>17 351 1272 427 0 0 1280 778 </string>
+								<string>2 72 1278 706 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -420,7 +414,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1064pt</string>
+					<string>1070pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -435,9 +429,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D53333D10D1B3A2006AEC8C</string>
+				<string>4DCEFDC91127BAB1000B98EB</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4D53333E10D1B3A2006AEC8C</string>
+				<string>4DCEFDCA1127BAB1000B98EB</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -571,13 +565,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4DCA329210A65E5D0085ADDC</string>
 		<string>/Users/yanger/mystuff/programming/wakeup/Awake/Awake.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>17 351 1272 427 0 0 1280 778 </string>
+	<string>2 72 1278 706 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -654,7 +646,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4DCA329210A65E5D0085ADDC</string>
-				<string>4D53334610D1B5C8006AEC8C</string>
+				<string>4DCEFDCE1127C207000B98EB</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
