@@ -109,8 +109,39 @@ class Configurator:
     def addWakeup(self, title, start, play=None,days=range(7),weights=None,end=None, fadein={},
                   fadeout = {},**kwargs):
         current_time = datetime.datetime.today()
+        if not (type(days) == tuple or type(days)==list):
+            days = [days,]
         if type(days)==int:
             days=[days,]
+        elif type(days)==str and days.upper()=="TODAY":
+            days = [current_time.weekday(),]
+        elif type(days)==tuple or type(days) == list:
+            pass
+        else:
+            raise ValueError("Invalid type for days for wakeup:%s" % title)
+        days_new = []
+        for x in days:
+            if type(x) == int:
+                days_new.append(x)
+            elif type(x) == str:
+                p = x.lower()
+                if p == "today":
+                    days_new.append(current_time.weekday())
+                elif p.startswith("m"):
+                    days_new.append(0)
+                elif p.startswith("tu"):
+                    days_new.append(1)
+                elif p.startswith("w"):
+                    days_new.append(2)
+                elif p.startswith("th"):
+                    days_new.append(3)
+                elif p.startswith("f"):
+                    days_new.append(4)
+                elif p.startswith("sa"):
+                    days_new.append(5)
+                elif p.startswith("su"):
+                    days_new.append(6)
+        days = days_new
         t=filter(lambda r: r<0 or r>6,days)
         if(len(t)>0):
             raise ValueError("Illegal value for days in %s, got %s" %( str(days),str(t)))

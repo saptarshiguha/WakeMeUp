@@ -50,6 +50,7 @@ class MPlayer(Player.Player):
                 self.runner.waitUntilExit()
     def volume_set(self,vol):
         if self.runner and self.runner.isRunning():
+            print(vol)
             self.sendCommand("volume %d 1" % int(vol))
     def volume(self,args):
         return 0
