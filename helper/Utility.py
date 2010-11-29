@@ -41,7 +41,8 @@ HOOKS={'ONAWAKE':"on_awake"
 
 def runAppScriptCommand(s):
         ap = NSAppleScript.alloc().initWithSource_(s)
-        ap.executeAndReturnError_(None)
+        v=ap.executeAndReturnError_(None)
+	return(v)
 
 def getPasswordFromKeychain():
 	import subprocess
