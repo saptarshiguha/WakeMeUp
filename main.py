@@ -15,10 +15,7 @@ import AppKit
 from PyObjCTools import AppHelper
 
 # import modules containing classes required to start application and load MainMenu.nib
-objc.loadBundle("GrowlApplicationBridge"
-                ,globals()
-                ,bundle_path=objc.pathForFramework(
-                    "/Library/Frameworks/Growl.framework"))
+
 
 import AwakeAppDelegate
 import LogWindowController

@@ -21,7 +21,7 @@ from Foundation import *
 from AppKit import *
 import objc
 objc.setVerbose(True)
-from Wakening import Runner
+from Runner import WakeItem
 from Player import *
 from MPlayer import *
 from Utility import *
@@ -82,14 +82,14 @@ class Configurator:
             if k in HOOKS.values():
                 self.env[k]=dd[k]
         for i in self.wktmp:
-            runner = Runner.alloc().init()
+            wakeitem = WakeItem.alloc().init()
             xtra=dict(self.env.items() + i['xtr'].items() )
-            runner.create( title=i['title'], play=i['play']
+            wakeitem.create( title=i['title'], play=i['play']
                            ,wake_time=i['wake_time'],end_time=i['end_time']
                            ,fadein=i['fadein'],fadeout=i['fadeout']
                            ,xtr=xtra)
-            self.awakelog.info("%s" % runner)
-            self.wakeups.append(runner)
+            self.awakelog.info("%s" % wakeitem)
+            self.wakeups.append(wakeitem)
     
     def getEnv(self):
         return self.env
@@ -149,7 +149,7 @@ class Configurator:
         if weights == None:
             weights = [1 for y_ in play]
         elif type(weights)==int or type(weights)==float:
-            weights = [weights,]
+            weights = [weights for y_ in play]
         if(len(play)!=len(weights)):
             raise ValueError("Length of play must be equal to length of weights in %s" % title)
         which = chooseRandom( play, weights)
@@ -167,7 +167,7 @@ class Configurator:
                 raise ValueError("Illegal value for end time: %s" % end_time)
        
         xtr = dict(self.env.items() + kwargs.items() )
-        xtr = dict(xtr.items() + self.playables[which].extras.items())
+        xtr = dict(self.playables[which].extras.items()+xtr.items())
         self.wktmp.append( {'title':title,'play':self.playables[which]
                       ,'wake_time':wake_time,'end_time':end_time
                       ,'fadein':fadein,'fadeout':fadeout,'xtr':xtr})

@@ -16,7 +16,7 @@
 
 from Foundation import *
 from AppKit import *
-from WakeMeUp import Waka
+from Administration import Administration
 import objc
 objc.setVerbose(True)
 import datetime
@@ -31,18 +31,18 @@ class AwakeAppDelegate(NSObject):
         self.awakelog.info("Awake did finish launching.")
         self.cfgfile = NSHomeDirectory()+os.path.sep+".wakeuprc"
         self.awakelog.info("Using the following wakeupfile:"+self.cfgfile)
-        self.waka = Waka.alloc().init()
-        self.waka.setConfig(self.cfgfile)
-        self.waka.schedule()
+        self.admin = Administration.alloc().init()
+        self.admin.setConfig(self.cfgfile)
+        self.admin.schedule()
         self.notifyfromsleep()
         self.setAlarmForNextDay() #added once, does it have to added again?
     def applicationDidFinishLaunching_(self, sender):
-        if self.waka.getEnv().get(HOOKS['ONFINISHLAUNCH'],None):
-            self.waka.getEnv()[HOOKS['ONFINISHLAUNCH']](sender)
+        if self.admin.getEnv().get(HOOKS['ONFINISHLAUNCH'],None):
+            self.admin.getEnv()[HOOKS['ONFINISHLAUNCH']](sender)
 
     def cancelAllPerforms(self):
-        # NSObject.cancelPreviousPerformRequestsWithTarget_(self.waka)
-        self.waka.cancelRequests()
+        # NSObject.cancelPreviousPerformRequestsWithTarget_(self.admin)
+        self.admin.cancelRequests()
         NSObject.cancelPreviousPerformRequestsWithTarget_(self)
 
     def setAlarmForNextDay(self):
@@ -54,7 +54,7 @@ class AwakeAppDelegate(NSObject):
         self.performSelector_withObject_afterDelay_("refreshme",None,sec)
     def refreshme(self):
         self.awakelog.info("A new day has started, let's reload")
-        if self.waka.getEnv().get(HOOKS['NEW_DAY_RELOAD'],True):
+        if self.admin.getEnv().get(HOOKS['NEW_DAY_RELOAD'],True):
             self.reload_(None)
     def notifyfromsleep(self):
         nc = NSWorkspace.sharedWorkspace().notificationCenter()
@@ -62,35 +62,36 @@ class AwakeAppDelegate(NSObject):
             self,"receiveWakeNote:",NSWorkspaceDidWakeNotification,None)
     def applicationShouldTerminate_(self,sender):
         self.awakelog.info("Quiting Awake")
-        self.waka.stopCurrentRunning((2,sender))
-        if(self.waka.getEnv().get(HOOKS['ONQUIT'],None)):
-           self.waka.getEnv()[HOOKS['ONQUIT']](sender)
+        self.admin.stopCurrentRunning((2,sender))
+        if(self.admin.getEnv().get(HOOKS['ONQUIT'],None)):
+           self.admin.getEnv()[HOOKS['ONQUIT']](sender)
         return True
     def stop_(self,sender):
         self.awakelog.info("Stopping Currently Playing Music")
         if(not type(sender)==tuple):
-            self.waka.stopCurrentRunning((-1,sender))
+            self.admin.stopCurrentRunning((-1,sender))
         else:
-            self.waka.stopCurrentRunning(sender)
+            self.admin.stopCurrentRunning(sender)
     def reload_(self,sender):
         self.awakelog.info("Reloading rc file")
-        if(self.waka.getEnv().get(HOOKS['ONRELOAD'],None)):
-           self.waka.getEnv()[HOOKS['ONRELOAD']](sender)
+        if(self.admin.getEnv().get(HOOKS['ONRELOAD'],None)):
+           self.admin.getEnv()[HOOKS['ONRELOAD']](sender)
         self.cancelAllPerforms()
-        self.waka.setConfig(self.cfgfile,True)
-        self.waka.schedule()
+        self.admin.setConfig(self.cfgfile,True)
+        self.admin.schedule()
         self.setAlarmForNextDay()
         
     def receiveWakeNote_(self,note):
         self.awakelog.info("Awoke from sleep, Awake is awoken:)")
-        if(self.waka.getEnv().get(HOOKS['ONAWAKE'],None)):
-           self.waka.getEnv()[HOOKS['ONAWAKE']](note)
+        if(self.admin.getEnv().get(HOOKS['ONAWAKE'],None)):
+           self.admin.getEnv()[HOOKS['ONAWAKE']](note)
         self.stop_((1,None))
         self.reload_(None)
 
     def snooze_(self,sender):
-        self.waka.snooze()
+        self.admin.snooze()
 
     def openconfigfile_(self,sender):
-        cfg = self.waka.getEnv().get('CONFIG_FILE',self.cfgfile)
+        cfg = self.admin.getEnv().get('CONFIG_FILE',self.cfgfile)
+        self.awakelog.info("Opening config file:%s" % cfg)
         os.system("open %s" % cfg)
