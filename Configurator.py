@@ -159,6 +159,8 @@ class Configurator:
             self.addPlayable(title=pl, type=iTunesURL,how = what)
         elif x == "action":
             self.addPlayable(title=pl, type=Action,how = what)
+        elif x == "mplayer":
+            self.addPlayable(title=pl, type=MPlayer,how = what)
         else:
             raise Exception("Not present and cannot infer url:%s" % pl)
         return pl

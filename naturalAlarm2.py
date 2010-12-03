@@ -85,7 +85,10 @@ class NaturalAlarm:
             if check("weekends") or check("every weekend"): f=[False,False,False,False,False,True,True]
             if check("weekday"): f=[True,True,True,True,True,False,False]
             return f
-        self.regularity = _inline()
+        if word=="":
+            self.regularity = [True,True,True,True,True,True,True]
+        else:
+            self.regularity = _inline()
         sys.stdout.write("%s\n" % str(self.regularity))
     def find_start(self, s):
         t = pdc_p.parse(s)
@@ -160,7 +163,7 @@ class NaturalAlarm:
         self.word=re.sub("'","\"",self.oldword)
         self.start_time = None
         self.end_time  = None
-        self.regularity = [False,False,False,False,False,False,False]
+        self.regularity = [True,True,True,True,True,True,True]
         self.funcs={ 'find_start':self.find_start, 'find_end':self.find_end, 'find_regularity':self.find_regularity}
         def repme1(mo):
             import uuid
