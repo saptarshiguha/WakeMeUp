@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D39732412A8AB8900F6206B /* naturalAlarm.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D39732312A8AB8900F6206B /* naturalAlarm.py */; };
 		4D39735A12A8B77F00F6206B /* __init__.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D39735412A8B77F00F6206B /* __init__.py */; };
 		4D39735B12A8B77F00F6206B /* __init__.pyc in Resources */ = {isa = PBXBuildFile; fileRef = 4D39735512A8B77F00F6206B /* __init__.pyc */; };
 		4D39735C12A8B77F00F6206B /* parsedatetime.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D39735612A8B77F00F6206B /* parsedatetime.py */; };
@@ -15,6 +14,7 @@
 		4D39735E12A8B77F00F6206B /* parsedatetime_consts.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D39735812A8B77F00F6206B /* parsedatetime_consts.py */; };
 		4D39735F12A8B77F00F6206B /* parsedatetime_consts.pyc in Resources */ = {isa = PBXBuildFile; fileRef = 4D39735912A8B77F00F6206B /* parsedatetime_consts.pyc */; };
 		4D39738A12A8BAC400F6206B /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D39738912A8BAC400F6206B /* Python.framework */; };
+		4D4AF70D12A9864F00CAFBCC /* naturalAlarm2.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D4AF70C12A9864F00CAFBCC /* naturalAlarm2.py */; };
 		4D55DA4510CB456300641879 /* LogWindowController.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D55DA4410CB456300641879 /* LogWindowController.py */; };
 		4D5C7E3A10C9C7C900E32800 /* AwakeAppDelegate.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C7E3210C9C7C900E32800 /* AwakeAppDelegate.py */; };
 		4D5C7E3B10C9C7C900E32800 /* Configurator.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D5C7E3310C9C7C900E32800 /* Configurator.py */; };
@@ -55,7 +55,6 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* Awake_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Awake_Prefix.pch; sourceTree = "<group>"; };
-		4D39732312A8AB8900F6206B /* naturalAlarm.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = naturalAlarm.py; sourceTree = "<group>"; };
 		4D39735412A8B77F00F6206B /* __init__.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
 		4D39735512A8B77F00F6206B /* __init__.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = __init__.pyc; sourceTree = "<group>"; };
 		4D39735612A8B77F00F6206B /* parsedatetime.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = parsedatetime.py; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		4D39735812A8B77F00F6206B /* parsedatetime_consts.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = parsedatetime_consts.py; sourceTree = "<group>"; };
 		4D39735912A8B77F00F6206B /* parsedatetime_consts.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = parsedatetime_consts.pyc; sourceTree = "<group>"; };
 		4D39738912A8BAC400F6206B /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		4D4AF70C12A9864F00CAFBCC /* naturalAlarm2.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = naturalAlarm2.py; sourceTree = "<group>"; };
 		4D55DA4410CB456300641879 /* LogWindowController.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = LogWindowController.py; sourceTree = "<group>"; };
 		4D5C7E3210C9C7C900E32800 /* AwakeAppDelegate.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = AwakeAppDelegate.py; sourceTree = "<group>"; };
 		4D5C7E3310C9C7C900E32800 /* Configurator.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Configurator.py; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 				4D39735312A8B77F00F6206B /* parsedatetime */,
 				4D5C7E3210C9C7C900E32800 /* AwakeAppDelegate.py */,
 				4D55DA4410CB456300641879 /* LogWindowController.py */,
-				4D39732312A8AB8900F6206B /* naturalAlarm.py */,
 				4D5C7E3310C9C7C900E32800 /* Configurator.py */,
+				4D4AF70C12A9864F00CAFBCC /* naturalAlarm2.py */,
 				4D5C7E3810C9C7C900E32800 /* Administration.py */,
 				4D5C7E3910C9C7C900E32800 /* Runner.py */,
 				4D5C7E3410C9C7C900E32800 /* helper */,
@@ -267,13 +267,13 @@
 				4D5C7E4010C9C7C900E32800 /* Runner.py in Resources */,
 				4D55DA4510CB456300641879 /* LogWindowController.py in Resources */,
 				4D936E8110D056450094C383 /* COPYING in Resources */,
-				4D39732412A8AB8900F6206B /* naturalAlarm.py in Resources */,
 				4D39735A12A8B77F00F6206B /* __init__.py in Resources */,
 				4D39735B12A8B77F00F6206B /* __init__.pyc in Resources */,
 				4D39735C12A8B77F00F6206B /* parsedatetime.py in Resources */,
 				4D39735D12A8B77F00F6206B /* parsedatetime.pyc in Resources */,
 				4D39735E12A8B77F00F6206B /* parsedatetime_consts.py in Resources */,
 				4D39735F12A8B77F00F6206B /* parsedatetime_consts.pyc in Resources */,
+				4D4AF70D12A9864F00CAFBCC /* naturalAlarm2.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

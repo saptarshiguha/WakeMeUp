@@ -25,7 +25,7 @@ from Runner import WakeItem
 from Player import *
 from MPlayer import *
 from Utility import *
-import naturalAlarm
+import naturalAlarm2
 
 def getName():
     i=0
@@ -109,12 +109,13 @@ class Configurator:
     def getWakeups(self):
         return self.wakeups
     def naturalParse(self,x,fadein={},fadeout={},**kwargs):
-        c= naturalAlarm.NaturalAlarm(x)
         if self.uselog:
-            self.awakelog.info("Parsing natural alarm: %s" % str(c.oldword))
-            self.awakelog.info("Parsing natural alarm results: %s" % str(c.driven))
+            self.awakelog.info("Parsing natural alarm: %s" % str(x))
+        c= naturalAlarm2.NaturalAlarm(x)
+        if self.uselog:
+            self.awakelog.info("Parsing natural alarm results: %s" % str(c))
         else:
-            print ("Parsing natural alarm results: %s" % str(c.driven))
+            print ("Parsing natural alarm results: %s" % str(c))
         x=self.constructWakeUp(c)
         x['fadein']=fadein
         x['fadeout']=fadeout
@@ -163,37 +164,32 @@ class Configurator:
         return pl
 
     def constructWakeUp(self,obj):
-        o = obj.driven
-        if o is None or (type(o)== tuple and o[0] is None):
-            return None
         ##compulsory: starttime
         container={'time':None,'play':None,'days':range(7), 'weights':None,'end':None,'fadein':{},'fadeout':{}}
-        starttime = o.get('start',None)
+        starttime = obj.start_time
         if starttime is None:
-            return None
+            raise ValueError("I received a naturally parsed expression without a start time?: %s" % str(obj))
         year,month,day,hour,minute,sec = starttime.year,starttime.month,starttime.day,starttime.hour, starttime.minute,starttime.second
         container['time']={'yr':year, 'mon':month, 'day':day, 'hr':hour, 'min':minute,'sec':sec}
-        dow = o.get("dow",None)
-    #optional: end time
-        if o.get("duration",None):
-            container['end'] = o['duration'].seconds
-    #not compulsory: dow
-        days = None
-        if dow:
-            days = []
-            arr = ("mon","tue","wed","thur","fri","sat","sun")
-            for i in range(7):
-                if dow[i]:
-                    days.append(arr[i])
-            container['days'] = days
+                    #optional: end time
+        if obj.end_time:
+            container['end'] = (obj.end_time - obj.start_time).seconds
+                #not compulsory: dow
+        dow = obj.regularity
+        days = []
+        arr = ("mon","tue","wed","thur","fri","sat","sun")
+        for i in range(7):
+            if dow[i]:
+                days.append(arr[i])
+        container['days'] = days
         #compulsory: what to play
-        actual = o.get("subject",None)
+        actual = obj.getsubject()
         if actual is None:
             return None
         play=[]
         weights=[]
         whatwaslast = None
-        for w in naturalAlarm.readToken(actual):
+        for w in naturalAlarm2.readToken(actual):
             if type(w)==float:
                 weights.append(w)
                 whatwaslast = "notlabel"
@@ -286,8 +282,9 @@ class Configurator:
         else:
             raise ValueError("Strangest Start time: %s" % str(start))
         
-        if(wake_time<current_time):
+        if(wake_time<current_time or wake_time > (current_time+datetime.timedelta(seconds=86400))):
             return
+		#confirm within 24hrs
         if play is None:
             play = self.playables.keys()
         elif type(play)==str:

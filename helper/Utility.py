@@ -131,18 +131,19 @@ class AwakeLog(NSObject):
 		self.performSelector_withObject_afterDelay_("checkForNewVersion",None,1)
 		return self
 	def checkForNewVersion(self):
-		import urllib2
-		# try:
-		response = urllib2.urlopen('http://www.stat.purdue.edu/~sguha/dn/wakemeup.version')
-		package = response.read()
-		dd={}
-		exec package in dd
-		dd=dd['awake_news']
-		if dd['version']> VERSION_ID:
-			dwnurl = dd['download']
-			AwakeLog.logcontroller.statusbarmessage = 'New Version: '+dwnurl + "\nInfo:"+dd.get('news')[:40]
-		# except :
-			# pass
+		try:
+			import urllib2
+			# try:
+			response = urllib2.urlopen('http://www.stat.purdue.edu/~sguha/dn/wakemeup.version')
+			package = response.read()
+			dd={}
+			exec package in dd
+			dd=dd['awake_news']
+			if dd['version']> VERSION_ID:
+				dwnurl = dd['download']
+				AwakeLog.logcontroller.statusbarmessage = 'New Version: '+dwnurl + "\nInfo:"+dd.get('news')[:40]
+		except :
+			pass
 
 	def info(self, message):
 		self.log("info",str(message))

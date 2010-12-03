@@ -1,0 +1,59 @@
+## -*- mode: Python;-*-
+play(title="Radio Paradise",type=MPlayer,how="http://stream-01.myserver.org:8052")
+play(title="KCRW LIVE",type=URL,how="http://64.12.61.1:80/stream/1046")
+play(title="KCRW MUSIC",type=MPlayer,how="http://205.188.234.2:80/stream/1045")
+play(title="WCPE",type=URL,how="http://152.46.7.128:8000/wcpe.mp3")
+play(title="Bolly More",type=URL,how="http://64.62.194.5:24236")
+play(title="Bolly Sooth",type=URL,how="http://216.246.14.77:80")
+play(title="Desi Radio",type=URL,how="http://76.73.52.172:8010")
+play(title="Indian Classical",type=URL,how="http://radio3.tabla.com:2310/listen.pls")
+play(title="Nature Sound",type=PLAYLIST,how="mush")
+play(title="My Random Music",type=SMART,how="fofo")
+play(title="BBC World",type=MPlayer,
+     how="http://www.wifiradio-frontier.com/pls/pls1946.asx",mplayer_opt={'opt':('-playlist',)})
+
+#######################################
+## Mon Tues  Wed  Thur  Fri  Sat  Sun
+## 0    1     2     3    4    5    6
+########################################
+
+def quicky(what, when=1,maxvol=100,duration=30):
+    import uuid
+    if len(what)==1:
+        p = (what,)
+    else:
+        p = what
+    wakeup(title=str(uuid.uuid4()),days="today",play=p,start=when,fadein={'dur':duration,'end':maxvol})
+    
+def itunes_pre_play(x):
+    run_appscript("tell application \"iTunes\" to set sound volume to 100")
+def mplayer_pre_play(x):
+    run_appscript("set volume output volume 100")
+
+def on_volume_set(x):
+    run_appscript("set volume output volume %s" % str(x))
+
+def pre_play(x):
+    import os
+    run_appscript("set volume output volume %s" % str(x))
+    os.system('say "will play %s"' % x.title)
+
+ENV['fade_dur']=150
+
+
+
+N("play ['Radio Paradise',5 'KCRW MUSIC',6 'WCPE',2] at 5:40am every day", fadein={'dur':60,'end':38})
+N("play ['KCRW LIVE'] at 6:45am every mon,wed,fri", fadein={'end':80})
+N("play ['BBC World'] at 7:45am every sat", fadein={'end':80})
+N("play ['KCRW LIVE'] at 8:30pm every sun ", fadein={'end':80})
+
+# wakeup(title='NewsWeek',days=("mon","wed","fri"),play="KCRW LIVE",start=(6,45),fadein={'end':80})
+# wakeup(title='NewsSaturday',days="sat",play=("BBC World"),start=(7,45),fadein={'end':80})
+# wakeup(title='NewsWeekend',days="su",play=("KCRW LIVE"),start=(8,30),fadein={'end':80})
+# wakeup(title='DailyWeekend',play=('Radio Paradise',"KCRW MUSIC","WCPE")
+#        ,weights=(5,6,2),start=(5,40),fadein={'dur':0.3*60,'end':38} )
+# quicky("Radio Paradise",when=2)
+
+
+
+
