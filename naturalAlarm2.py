@@ -112,27 +112,29 @@ class NaturalAlarm:
             delta = max(ending1,ending2)
             deltasecs = delta.days*86400+delta.seconds
         if (deltasecs > 86400 or deltasecs<0):
-            raise ValueError("Cannot play for longer than 24hrs or negative (passed=%s,orgi=%s,end_time=%s" % (s,self.oldword,ending))
+            raise ValueError("Cannot play for longer than 24hrs or negative (passed=%s,orgi=%s,end_time=%s,start=%s" % (s,self.oldword,ending,str(start_time)))
         self.end_time=self.start_time + delta
         print "end(%s):%s"%(s,str(self.end_time))
         
     def findMax(self, rex, s, deflt):
         mymax=-1
-        # p=rex.match(s)
-        # if p:
-        #     print p.group()
-        #     return p.start()
-        # else:
-        #     return deflt
-        for x in rex.finditer(s):
-            if x.start() >= mymax:
-                mymax = x.start()
-        if mymax<0:
-            mymax = deflt
-        return mymax
+        p=rex.search(s)
+        if p:
+            # print p.group()
+            return p.start()
+        else:
+            return deflt
+        # for x in rex.finditer(s):
+        #     print x.group()
+        #     if x.start() >= mymax:
+        #         mymax = x.start()
+        # if mymax<0:
+        #     mymax = deflt
+        # print "DOE"
+        # return mymax
     def drive(self):
-        startsyno = re.compile("(awake|wakeupto|wakeup|wake|awaketo|awake|cometo|come|arouse|rouse|play|listen|play|at|from|form|beginning|begining|starting|since)\s+")
-        endsynon =   re.compile("(to|for|till|until|untill|stop|(stop\s+at)|(stop\s+in)|(stop\s+after)|(not more)|most|kill)")
+        startsyno = re.compile("(in|at|awake|wakeupto|wakeup|wake|awaketo|awake|cometo|come|arouse|rouse|play|listen|play|from|form|beginning|begining|starting|since)\s+")
+        endsynon =  re.compile("(to|for|till|until|untill|stop|(stop\s+at)|(stop\s+in)|(stop\s+after)|(not more)|most|kill)")
         regularity =  re.compile("(daily|every|weekends|weekend|weekdays|weekday|mwf|tth|(mondays|monays|tuesdays|wednesdays|wensdays|thursdays|thrusdays|thersdays|fridays|saturdays|sats|sundays|suns))")
         startpos = self.findMax(startsyno,self.word,len(self.word))
         durationpos = self.findMax(endsynon,self.word,len(self.word))
@@ -140,6 +142,7 @@ class NaturalAlarm:
         if startpos == None:
             raise ValueError("No starting identifier found in expression: %s" % self.oldword)
         y= sorted(zip( (startpos,durationpos,regularitypos) , ("find_start","find_end","find_regularity")),reverse=False)
+        # print "Foo="+str(y)
         t={}
         t[y[0][1]]= ( self.word[ y[0][0]:(y[1][0]) ] )
         t[y[1][1]]= ( self.word[ y[1][0]:(y[2][0]) ] )
