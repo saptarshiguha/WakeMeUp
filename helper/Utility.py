@@ -164,6 +164,7 @@ class AwakeLog(NSObject):
 		tv.setAttributes_range_(self.infodictmessage, arange)
 		AwakeLog.logcontroller.gotoEnd()
 		AwakeLog.logcontroller.refreshWindow()
+		NSLog(str(message))
 
 class StdParent(NSObject):
 	def init(self):
