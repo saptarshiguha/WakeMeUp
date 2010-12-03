@@ -25,7 +25,13 @@ from Runner import WakeItem
 from Player import *
 from MPlayer import *
 from Utility import *
+import naturalAlarm
 
+def getName():
+    i=0
+    while True:
+        i = i+1
+        yield "Wakeup-%d" % i
 
 def chooseRandom(ob,wts):
     def cumsum(x):
@@ -59,24 +65,31 @@ class Playable:
         self.play_claz = typeclz
         self.how = how
         self.extras = xtrastuff
-  
+        self.env={}
+
     def __str__(self):
         return """[playable] title:%s type:%s what:%s""" % (str(self.title),str(self.play_claz.cdesc),str(self.how))
 
 class Configurator:
-    def __init__(self,configfile):
+    def __init__(self,configfile,uselog=True):
         self.cfile =configfile
-        self.awakelog = AwakeLog.alloc().initWithInfo_( {'filename':__name__})
-    def parseConfig(self):
-        self.env={}
-        dd = { 'URL': iTunesURL, 'PLAYLIST':iTunesPlaylist, 'SMART': iTunesSmartPlaylist, 'MPlayer':MPlayer,'ACTION':Action
-               ,'play':self.addPlayable, 'wakeup':self.addWakeup,'run_appscript':runAppScriptCommand,'ENV':self.env
-               ,'mail_gmail':mailViaGmail
-               }
+        self.uselog = uselog
+        if self.uselog:
+            self.awakelog = AwakeLog.alloc().initWithInfo_( {'filename':__name__})
+        self.createDataStructures()
+    def createDataStructures(self):
         self.playables={}
         self.wakeups = []
         self.wktmp=[]
-        # exec(compile(open(self.cfile).read(), self.cfile, 'exec'), globals=dd)
+        self.env={}
+        self.getAName = getName()
+        
+    def parseConfig(self):
+        self.createDataStructures()
+        dd = { 'URL': iTunesURL, 'PLAYLIST':iTunesPlaylist, 'SMART': iTunesSmartPlaylist, 'MPlayer':MPlayer,'ACTION':Action
+               ,'play':self.addPlayable, 'wakeup':self.addWakeup,'run_appscript':runAppScriptCommand,'ENV':self.env
+               ,'mail_gmail':mailViaGmail,'N':self.naturalParse
+               }
         execfile(self.cfile,dd)
         for k in dd.keys():
             if k in HOOKS.values():
@@ -95,6 +108,106 @@ class Configurator:
         return self.env
     def getWakeups(self):
         return self.wakeups
+    def naturalParse(self,x,fadein={},fadeout={},**kwargs):
+        c= naturalAlarm.NaturalAlarm(x)
+        if self.uselog:
+            self.awakelog.info("Parsing natural alarm: %s" % str(c.oldword))
+            self.awakelog.info("Parsing natural alarm results: %s" % str(c.driven))
+        else:
+            print ("Parsing natural alarm results: %s" % str(c.driven))
+        x=self.constructWakeUp(c)
+        x['fadein']=fadein
+        x['fadeout']=fadeout
+        if self.uselog and x:
+            self.awakelog.info("Natural alarm constructed: %s" % str(x))
+        if x:
+            self.addWakeup(title=self.getAName.next(),start = x['time'],play = x['play'],days=x['days'],weights=x['weights'],end=x['end'],fadein=fadein,fadeout=fadeout,**kwargs)
+        else:
+            raise Exception("Bad Parsing: %s" % x)
+        # print self.wktmp
+    def convertIntoPlay(self,pl):
+        import re
+        ## remove quotations
+        if pl[0]=="'" or pl[0]=="\"":
+            pl = pl[1:-1]
+        import urlparse
+        haveit = self.playables.get(pl,None)
+        if not haveit  == None:
+            if self.uselog:
+                self.awakelog.info("Returning cached playable for %s" % pl)
+            else:
+                print("Returning cached playable for %s" % pl)
+            return pl
+        pl=re.sub("\"","",pl)
+        scheme = pl.split(":",1)
+        try:
+            what = scheme[1]
+        except IndexError:
+            raise Exception("This is not defined, how to play? %s" % pl)
+        x=scheme[0]
+        
+        if x == "file":
+            self.addPlayable(title=pl, type=MPlayer,how = what)
+        elif scheme[0] == "http":
+            self.addPlayable(title=pl, type=iTunesURL,how = pl)
+        elif x == "playlist":
+            self.addPlayable(title=pl, type=iTunesPlaylist,how = what)
+        elif x == "smart":
+            self.addPlayable(title=pl, type=iTunesSmartPlaylist,how = what)
+        elif x == "url":
+            self.addPlayable(title=pl, type=iTunesURL,how = what)
+        elif x == "action":
+            self.addPlayable(title=pl, type=Action,how = what)
+        else:
+            raise Exception("Not present and cannot infer url:%s" % pl)
+        return pl
+
+    def constructWakeUp(self,obj):
+        o = obj.driven
+        if o is None or (type(o)== tuple and o[0] is None):
+            return None
+        ##compulsory: starttime
+        container={'time':None,'play':None,'days':range(7), 'weights':None,'end':None,'fadein':{},'fadeout':{}}
+        starttime = o.get('start',None)
+        if starttime is None:
+            return None
+        year,month,day,hour,minute,sec = starttime.year,starttime.month,starttime.day,starttime.hour, starttime.minute,starttime.second
+        container['time']={'yr':year, 'mon':month, 'day':day, 'hr':hour, 'min':minute,'sec':sec}
+        dow = o.get("dow",None)
+    #optional: end time
+        if o.get("duration",None):
+            container['end'] = o['duration'].seconds
+    #not compulsory: dow
+        days = None
+        if dow:
+            days = []
+            arr = ("mon","tue","wed","thur","fri","sat","sun")
+            for i in range(7):
+                if dow[i]:
+                    days.append(arr[i])
+            container['days'] = days
+        #compulsory: what to play
+        actual = o.get("subject",None)
+        if actual is None:
+            return None
+        play=[]
+        weights=[]
+        whatwaslast = None
+        for w in naturalAlarm.readToken(actual):
+            if type(w)==float:
+                weights.append(w)
+                whatwaslast = "notlabel"
+            else:
+                actually = obj.urlhash.get(w,w)
+                if whatwaslast == "alabel":
+                    weights.append(1.0)
+                play.append(self.convertIntoPlay(actually))
+                whatwaslast="alabel"
+        if whatwaslast == "alabel":
+            weights.append(1.0)
+        container['weights'] = weights
+        container['play'] = play
+        return container
     def addPlayable(self, title, **kwargs):
         import copy
         p = Playable()
@@ -105,7 +218,8 @@ class Configurator:
             del(g['how'])
         p.set(title, kwargs.get('type', None), kwargs.get('how',None),g)
         self.playables[title] = p
-        self.awakelog.info("%s" % str(p))
+        if self.uselog:
+            self.awakelog.info("Added %s" % str(p))
     def addWakeup(self, title, start, play=None,days=range(7),weights=None,end=None, fadein={},
                   fadeout = {},**kwargs):
         current_time = datetime.datetime.today()
@@ -167,7 +281,8 @@ class Configurator:
             day = start.get('day',current_time.day)
             month = start.get('mon',current_time.month)
             year = start.get('yr',current_time.year)
-            wake_time = current_time.replace(year=year,month=month,day=day,hour=hr,minute=minute,second=0)
+            second = start.get('sec',0)
+            wake_time = current_time.replace(year=year,month=month,day=day,hour=hr,minute=minute,second=second)
         else:
             raise ValueError("Strangest Start time: %s" % str(start))
         
@@ -206,7 +321,6 @@ class Configurator:
 
                                 
             
+        
 
 
-        
-        

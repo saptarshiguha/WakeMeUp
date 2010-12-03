@@ -7,11 +7,15 @@
 #
 
 #import modules required by application
-import objc
-objc.setVerbose(True)
-import Foundation
-import AppKit
+from objc import *
+setVerbose(True)
+from Foundation import *
+from AppKit import *
+from PyObjCTools import *
+import sys
 
+NSLog(u"SYS.PATH follows for %s" % sys.version)
+NSLog(' '.join(sys.path))
 from PyObjCTools import AppHelper
 
 # import modules containing classes required to start application and load MainMenu.nib
