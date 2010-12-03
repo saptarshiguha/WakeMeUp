@@ -2,7 +2,7 @@ import parsedatetime as pdt
 import parsedatetime_consts as pdc
 import string
 from time import localtime,asctime
-from datetime import datetime
+from datetime import datetime,timedelta
 import re
 
 pdc_p = pdt.Calendar(pdc.Constants())
@@ -96,7 +96,7 @@ class NaturalAlarm:
             raise ValueError("Invalid start time (%s) for %s" % (s,self.oldword))
         t=datetime( *t[0][:6])
         print "start(%s):%s"%(s,str(t))
-        self.start_time = t
+        self.start_time = t+timedelta(seconds=3)
     def find_end(self,s):
         t = pdc_p.parse(s)
         if t[1] == 0:

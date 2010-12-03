@@ -88,7 +88,7 @@ class Configurator:
         self.createDataStructures()
         dd = { 'URL': iTunesURL, 'PLAYLIST':iTunesPlaylist, 'SMART': iTunesSmartPlaylist, 'MPlayer':MPlayer,'ACTION':Action
                ,'play':self.addPlayable, 'wakeup':self.addWakeup,'run_appscript':runAppScriptCommand,'ENV':self.env
-               ,'mail_gmail':mailViaGmail,'N':self.naturalParse
+               ,'mail_gmail':mailViaGmail,'N':self.naturalParse,'groupname':self.getAName
                }
         execfile(self.cfile,dd)
         for k in dd.keys():
