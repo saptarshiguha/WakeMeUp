@@ -93,6 +93,7 @@ class MPlayer(Player.Player):
         self.runner.standardOutput().fileHandleForReading().readInBackgroundAndNotifyForModes_(self.parseRunLoopModes)
         self.runner.standardError().fileHandleForReading().readInBackgroundAndNotifyForModes_(self.parseRunLoopModes)
         self.isrunning = True
+        self.awakelog.info("mplayer started as: %s" % ' '.join(self.cmd))
         self.runner.launch()
         # time.sleep(2)
         self.volume_set(0)
