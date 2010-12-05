@@ -50,7 +50,6 @@ class MPlayer(Player.Player):
                 self.runner.waitUntilExit()
     def volume_set(self,vol):
         if self.runner and self.runner.isRunning():
-            print(vol)
             self.sendCommand("volume %d 1" % int(vol))
     def volume(self,args):
         return 0
@@ -111,6 +110,8 @@ class MPlayer(Player.Player):
             self.runner.standardError().fileHandleForReading().readInBackgroundAndNotifyForModes_(self.parseRunLoopModes)
         for l in str(data).split("\n"):
             self.awakelog.info("MPlayer ERR:"+str(l))
+        if self.error_in_data(str(data)):
+            self.quit_now()
     def readOutputC(self, notif):
         data = notif.userInfo()['NSFileHandleNotificationDataItem']
         if (self.runner.isRunning() or( data and len(data)>0)):
@@ -127,14 +128,22 @@ class MPlayer(Player.Player):
                 self.awakelog.info(data)
             elif data.startswith("A:") or data.startswith("V:"):
                 pass
-            elif data.find("Quit")>0 or data.find("Exit")>0 or data.find("End of file")>0 or data.find("EOF")>0:
-                self.awakelog.info("Cocoa sent a message and we must quit")
-                NSNotificationCenter.defaultCenter().removeObserver_name_object_(self,NSFileHandleReadCompletionNotification,self.runner.standardOutput().fileHandleForReading())
-                NSNotificationCenter.defaultCenter().removeObserver_name_object_(self,NSFileHandleReadCompletionNotification,self.runner.standardError().fileHandleForReading())
+            elif self.error_in_data(data):
+                self.quit_now()
             else:
                 # print "OC:"+(str(data))
                 pass
-                
+    def quit_now(self):
+        self.awakelog.info("Cocoa sent a message and we must quit")
+        NSNotificationCenter.defaultCenter().removeObserver_name_object_(self,NSFileHandleReadCompletionNotification,self.runner.standardOutput().fileHandleForReading())
+        NSNotificationCenter.defaultCenter().removeObserver_name_object_(self,NSFileHandleReadCompletionNotification,self.runner.standardError().fileHandleForReading())
+    def error_in_data(self,x):
+        if x.find("Resource temporarily unavailable")>0:
+            return True
+        if x.find("Quit")>0 or x.find("Exit")>0 or x.find("End of file")>0 or x.find("EOF")>0:
+            return True
+        else:
+            return False
     def sendCommand(self, cmd):
         cmd = "%s\n" % cmd
         if self.runner and self.runner.isRunning():
