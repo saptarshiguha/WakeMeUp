@@ -98,25 +98,25 @@ class NaturalAlarm:
         print "start(%s):%s"%(s,str(t))
         self.start_time = t+timedelta(seconds=3)
     def find_end(self,s):
-        t = pdc_p.parse(s)
+        t = pdc_p.parse(s, self.start_time)
         if t[1] == 0:
             print "end:"
             return
         ## parsedatetime will sometimes (e.g. for 2hrs) compute time from now
         ## so get the difference and add it to start_time
         ending = datetime( *t[0][:6])
-        start_time = self.start_time
-        print "End time:%s" % str(ending)
-        ending1 = start_time.replace(day=ending.day,hour  =ending.hour, minute = ending.minute,second=ending.second) - start_time
-        ending2 = ending -  datetime.today()
-        delta = min(ending1,ending2)
+        # start_time = self.start_time
+        # print "End time:%s" % str(ending)
+        # ending1 = start_time.replace(day=ending.day,hour  =ending.hour, minute = ending.minute,second=ending.second) - start_time
+        # ending2 = ending -  datetime.today()
+        # delta = min(ending1,ending2)
+        delta = ending - self.start_time
         deltasecs = delta.days*86400+delta.seconds
         if deltasecs <0 :
-            delta = max(ending1,ending2)
             deltasecs = delta.days*86400+delta.seconds
         if (deltasecs > 86400 or deltasecs<0):
             raise ValueError("Cannot play for longer than 24hrs or negative (passed=%s,orgi=%s,end_time=%s,start=%s" % (s,self.oldword,ending,str(start_time)))
-        self.end_time=self.start_time + delta
+        self.end_time=ending
         print "end(%s):%s"%(s,str(self.end_time))
         
     def findMax(self, rex, s, deflt):

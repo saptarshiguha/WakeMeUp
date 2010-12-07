@@ -336,7 +336,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D54080212AC14DE00466353</string>
+										<string>4DA62FA312AEF49500EFD52A</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
@@ -352,7 +352,7 @@
 											<string>4D4AF6EA12A94BED00CAFBCC</string>
 											<string>4D40877D12AB4959005BCF28</string>
 											<string>4D5407ED12AC141400466353</string>
-											<string>4D5407EE12AC141400466353</string>
+											<string>4D54080412AC157400466353</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -364,14 +364,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1070, 488}}</string>
+								<string>{{0, 0}, {1070, 483}}</string>
 								<key>RubberWindowFrame</key>
 								<string>2 72 1278 706 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>488pt</string>
+							<string>483pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -384,14 +384,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 493}, {1070, 172}}</string>
+								<string>{{0, 488}, {1070, 177}}</string>
 								<key>RubberWindowFrame</key>
 								<string>2 72 1278 706 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>172pt</string>
+							<string>177pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -410,9 +410,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D5407E712AC130400466353</string>
+				<string>4DA62FA412AEF49500EFD52A</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4D5407E812AC130400466353</string>
+				<string>4DA62FA512AEF49500EFD52A</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -548,8 +548,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4DCA329210A65E5D0085ADDC</string>
 		<string>/Users/yanger/mystuff/programming/WakeMeUp/Awake.xcodeproj</string>
 	</array>
@@ -631,7 +629,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4DCA329210A65E5D0085ADDC</string>
-				<string>4D5407E912AC130400466353</string>
+				<string>4DA62FA612AEF49500EFD52A</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
