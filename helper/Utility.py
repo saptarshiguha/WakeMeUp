@@ -149,25 +149,24 @@ class AwakeLog(NSObject):
 		self.log("info",str(message))
 		
 	def log(self, what,message):
-		## see http://borkware.com/quickies/one?topic=NSTextView
-		entry1 = u"[%s:%s:%s]"  % ( time.ctime(), str(what), str(self.filename))
-		entry2 = u"%s\n" % str(message)
-		tv = AwakeLog.logcontroller.getTextView().textStorage()
-
-		arange = (tv.string().length(), 0)
-		tv.replaceCharactersInRange_withString_(arange,entry1)
-		arange = (arange[0], len(entry1))
-		tv.setAttributes_range_(self.infodict, arange)
-
-		arange = (tv.string().length(), 0)
-		tv.replaceCharactersInRange_withString_(arange,entry2)
-		arange = (arange[0], len(entry2))
-		tv.setAttributes_range_(self.infodictmessage, arange)
-		AwakeLog.logcontroller.gotoEnd()
-		AwakeLog.logcontroller.refreshWindow()
 		try:
+			entry1 = u"[%s:%s:%s]"  % ( time.ctime(), str(what), str(self.filename))
+			entry2 = u"%s\n" % str(message)
+			tv = AwakeLog.logcontroller.getTextView().textStorage()
+
+			arange = (tv.string().length(), 0)
+			tv.replaceCharactersInRange_withString_(arange,entry1)
+			arange = (arange[0], len(entry1))
+			tv.setAttributes_range_(self.infodict, arange)
+
+			arange = (tv.string().length(), 0)
+			tv.replaceCharactersInRange_withString_(arange,entry2)
+			arange = (arange[0], len(entry2))
+			tv.setAttributes_range_(self.infodictmessage, arange)
+			AwakeLog.logcontroller.gotoEnd()
+			AwakeLog.logcontroller.refreshWindow()
 			NSLog(str(message))
-		except ValueError:
+		except UnicodeDecodeError,ValueError:
 			pass
 
 class StdParent(NSObject):
