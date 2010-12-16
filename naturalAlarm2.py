@@ -136,8 +136,9 @@ class NaturalAlarm:
         # print "DOE"
         # return mymax
     def drive(self):
-        startsyno = re.compile("(in|at|awake|wakeupto|wakeup|wake|awaketo|awake|cometo|come|arouse|rouse|play|listen|play|from|form|beginning|begining|starting|since)\s+")
-        endsynon =  re.compile("(to|for|till|until|untill|stop|(stop\s+at)|(stop\s+in)|(stop\s+after)|(not more)|most|kill)")
+        ## make this regex work on word boundaries!
+        startsyno = re.compile("(tomorrow|tommorrow|tommorow|in|at|awake|wakeupto|wakeup|wake|awaketo|awake|cometo|come|arouse|rouse|play|listen|play|from|form|beginning|begining|starting|since)\s+")
+        endsynon =  re.compile("(to |for|till|until|untill|stop|(stop\s+at)|(stop\s+in)|(stop\s+after)|(not more)|most|kill)")
         regularity =  re.compile("(daily|every|weekends|weekend|weekdays|weekday|mwf|tth|(mondays|monays|tuesdays|wednesdays|wensdays|thursdays|thrusdays|thersdays|fridays|saturdays|sats|sundays|suns))")
         startpos = self.findMax(startsyno,self.word,len(self.word))
         durationpos = self.findMax(endsynon,self.word,len(self.word))
@@ -147,6 +148,9 @@ class NaturalAlarm:
         y= sorted(zip( (startpos,durationpos,regularitypos) , ("find_start","find_end","find_regularity")),reverse=False)
         # print "Foo="+str(y)
         t={}
+        print("%s == %s" %(y[0][1],self.word[ y[0][0]:(y[1][0]) ]))
+        print("%s == %s" %(y[1][1],self.word[ y[1][0]:(y[2][0]) ]))
+        print("%s == %s" %(y[2][1],self.word[ y[2][0]:(len(self.word)) ]))
         t[y[0][1]]= ( self.word[ y[0][0]:(y[1][0]) ] )
         t[y[1][1]]= ( self.word[ y[1][0]:(y[2][0]) ] )
         t[y[2][1]]= ( self.word[ y[2][0]:(len(self.word)) ] )

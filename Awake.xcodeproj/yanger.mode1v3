@@ -280,9 +280,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
-									<integer>9</integer>
-									<integer>1</integer>
+									<integer>30</integer>
+									<integer>29</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -336,7 +335,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D3BB0F512B1680B00D91193</string>
+										<string>4D6146C912B9EFA700339625</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
@@ -352,7 +351,7 @@
 											<string>4D40877D12AB4959005BCF28</string>
 											<string>4D5407ED12AC141400466353</string>
 											<string>4D3BB0F412B1680B00D91193</string>
-											<string>4D4AF6EA12A94BED00CAFBCC</string>
+											<string>4D3BB0F512B1680B00D91193</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -364,14 +363,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1070, 477}}</string>
+								<string>{{0, 0}, {1070, 471}}</string>
 								<key>RubberWindowFrame</key>
 								<string>2 72 1278 706 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>477pt</string>
+							<string>471pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -384,14 +383,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 482}, {1070, 183}}</string>
+								<string>{{0, 476}, {1070, 189}}</string>
 								<key>RubberWindowFrame</key>
 								<string>2 72 1278 706 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>183pt</string>
+							<string>189pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -410,9 +409,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D3BB0ED12B1676400D91193</string>
+				<string>4D6146CA12B9EFA700339625</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4D3BB0EE12B1676400D91193</string>
+				<string>4D6146CB12B9EFA700339625</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -548,8 +547,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4DCA329210A65E5D0085ADDC</string>
 		<string>/Users/yanger/mystuff/programming/WakeMeUp/Awake.xcodeproj</string>
 	</array>
@@ -631,7 +628,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4DCA329210A65E5D0085ADDC</string>
-				<string>4D3BB0EF12B1676400D91193</string>
+				<string>4D6146CC12B9EFA700339625</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
