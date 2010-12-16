@@ -280,8 +280,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>30</integer>
-									<integer>29</integer>
+									<integer>6</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -323,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Utility.py</string>
+								<string>naturalAlarm2.py</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Utility.py</string>
+										<string>naturalAlarm2.py</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D6146C912B9EFA700339625</string>
+										<string>4D6146DB12BAB1C100339625</string>
 										<key>history</key>
 										<array>
 											<string>4D5C7E4510C9C95300E32800</string>
@@ -351,7 +351,8 @@
 											<string>4D40877D12AB4959005BCF28</string>
 											<string>4D5407ED12AC141400466353</string>
 											<string>4D3BB0F412B1680B00D91193</string>
-											<string>4D3BB0F512B1680B00D91193</string>
+											<string>4D6146D912BAB1C100339625</string>
+											<string>4D6146DA12BAB1C100339625</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -547,6 +548,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>4DCA329210A65E5D0085ADDC</string>
 		<string>/Users/yanger/mystuff/programming/WakeMeUp/Awake.xcodeproj</string>
 	</array>
@@ -748,13 +751,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>4D3BB0F612B1680B00D91193</string>
+				<string>4D6146DC12BAB1C100339625</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>4D3BB0F712B1680B00D91193</string>
-				<string>4D3BB0F812B1680B00D91193</string>
-				<string>4D3BB0F912B1680B00D91193</string>
-				<string>4D3BB0FA12B1680B00D91193</string>
-				<string>4D3BB0FB12B1680B00D91193</string>
+				<string>4D6146DD12BAB1C100339625</string>
+				<string>4D6146DE12BAB1C100339625</string>
+				<string>4D6146DF12BAB1C100339625</string>
+				<string>4D6146E012BAB1C100339625</string>
+				<string>4D6146E112BAB1C100339625</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -908,7 +911,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>4D3BB0FC12B1680B00D91193</string>
+				<string>4D6146E212BAB1C100339625</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

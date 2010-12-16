@@ -137,9 +137,11 @@ class NaturalAlarm:
         # return mymax
     def drive(self):
         ## make this regex work on word boundaries!
-        startsyno = re.compile("(tomorrow|tommorrow|tommorow|in|at|awake|wakeupto|wakeup|wake|awaketo|awake|cometo|come|arouse|rouse|play|listen|play|from|form|beginning|begining|starting|since)\s+")
-        endsynon =  re.compile("(to |for|till|until|untill|stop|(stop\s+at)|(stop\s+in)|(stop\s+after)|(not more)|most|kill)")
-        regularity =  re.compile("(daily|every|weekends|weekend|weekdays|weekday|mwf|tth|(mondays|monays|tuesdays|wednesdays|wensdays|thursdays|thrusdays|thersdays|fridays|saturdays|sats|sundays|suns))")
+		## see http://www.comanswer.com/question/does-python-re-module-support-word-boundaries-%255Cb
+		## for information on word boundaries
+        startsyno = re.compile(r"\b(in|at|awake|wakeupto|wakeup|wake|awaketo|awake|cometo|come|arouse|rouse|play|listen|play|from|form|beginning|begining|starting|since)\b",flags=re.IGNORECASE)
+        endsynon =  re.compile(r"\b(to|for|till|until|untill|stop|(stop\s+at)|(stop\s+in)|(stop\s+after)|(not more)|most|kill)\b",flags=re.IGNORECASE)
+        regularity =  re.compile(r"\b(daily|every|weekends|weekend|weekdays|weekday|mwf|tth|mondays|monays|tuesdays|wednesdays|wensdays|thursdays|thrusdays|thersdays|fridays|saturdays|sats|sundays|suns)\b",flags=re.IGNORECASE)
         startpos = self.findMax(startsyno,self.word,len(self.word))
         durationpos = self.findMax(endsynon,self.word,len(self.word))
         regularitypos = self.findMax(regularity,self.word,len(self.word))
