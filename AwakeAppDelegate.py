@@ -62,6 +62,7 @@ class AwakeAppDelegate(NSObject):
         nc.addObserver_selector_name_object_(
             self,"receiveWakeNote:",NSWorkspaceDidWakeNotification,None)
     def notifyTimeZoneChange(self):
+        self.awakelog.info("Current time zone: "+str(NSTimeZone.localTimeZone()))
         nc = NSWorkspace.sharedWorkspace().notificationCenter()
         nc.addObserver_selector_name_object_(
             self,"receiveTZChange:",NSSystemTimeZoneDidChangeNotification,None)
