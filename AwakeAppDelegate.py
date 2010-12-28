@@ -35,6 +35,7 @@ class AwakeAppDelegate(NSObject):
         self.admin.setConfig(self.cfgfile)
         self.admin.schedule()
         self.notifyfromsleep()
+        self.notifyTimeZoneChange()
         self.setAlarmForNextDay() #added once, does it have to added again?
     def applicationDidFinishLaunching_(self, sender):
         if self.admin.getEnv().get(HOOKS['ONFINISHLAUNCH'],None):
@@ -60,6 +61,11 @@ class AwakeAppDelegate(NSObject):
         nc = NSWorkspace.sharedWorkspace().notificationCenter()
         nc.addObserver_selector_name_object_(
             self,"receiveWakeNote:",NSWorkspaceDidWakeNotification,None)
+    def notifyTimeZoneChange(self):
+        nc = NSWorkspace.sharedWorkspace().notificationCenter()
+        nc.addObserver_selector_name_object_(
+            self,"receiveTZChange:",NSSystemTimeZoneDidChangeNotification,None)
+
     def applicationShouldTerminate_(self,sender):
         self.awakelog.info("Quiting Awake")
         self.admin.stopCurrentRunning((2,sender))
@@ -80,7 +86,12 @@ class AwakeAppDelegate(NSObject):
         self.admin.setConfig(self.cfgfile,True)
         self.admin.schedule()
         self.setAlarmForNextDay()
-        
+    def receiveTZChange_(self,note):
+        self.awakelog.info("Timezone change notice")
+        if(self.admin.getEnv().get(HOOKS['ONTZCHANGE'],None)):
+           self.admin.getEnv()[HOOKS['ONTZCHANGE']](note)
+        self.stop_((1,None))
+        self.reload_(None)
     def receiveWakeNote_(self,note):
         self.awakelog.info("Awoke from sleep, Awake is awoken:)")
         if(self.admin.getEnv().get(HOOKS['ONAWAKE'],None)):
