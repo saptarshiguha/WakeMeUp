@@ -47,7 +47,7 @@ def runAppScriptCommand(s):
 
 def getPasswordFromKeychain():
 	import subprocess
-	cmd0="security find-internet-password -gs %s 1>/dev/null" % "smtp.gmail.com"
+	cmd0="security find-generic-password -gs %s 1>/dev/null" % "smtp.gmail.com"
 	p = subprocess.Popen(cmd0, shell=True, bufsize=0, stderr=subprocess.PIPE,close_fds=True).stderr.readline()
 	if p==None or len(p)==0 or not p.startswith("password"):
 		return ''

@@ -12,8 +12,8 @@ def checkValidTo(msg):
     fro=email.Utils.parseaddr(msg['From'])[1]
     return to == "saptarshi.guha+play@gmail.com" and fro=="saptarshi.guha@gmail.com"
     # return to == "sguha+play@mozilla.com"
-
-def mailViaGmail(to, subject, text,attach=None,gmailuser=os.environ["GMAIL_USER"], gmailpwd=os.environ["GMAIL_PASSWORD"]):
+gmail_name,gmail_pass = open("/Users/mystuff/conf/sec","r").readlines()
+def mailViaGmail(to, subject, text,attach=None,gmailuser=gmail_name, gmailpwd=gmail_pass):
     try:
         import smtplib
         from email.MIMEMultipart import MIMEMultipart
