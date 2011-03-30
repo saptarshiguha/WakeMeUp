@@ -7,7 +7,6 @@ SERVERPORT = 8080
 MAILDIR = ("/Users/yanger/MyMail/.songrequest/cur/",)#,"/Users/sguha/MozMail/INBOX/new/")
 TIMEWINDOW = 60
 def checkValidTo(msg):
-    print msg
     to=email.Utils.parseaddr(msg['To'])[1]
     fro=email.Utils.parseaddr(msg['From'])[1]
     return to == "saptarshi.guha+play@gmail.com" and from=="saptarshi.guha@gmail.com"
