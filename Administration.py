@@ -104,9 +104,10 @@ class Administration(NSObject):
         self.performSelector_withObject_afterDelay_("runPlayer",plyr,timedelta)
 
     def scheduleOne(self,one):
-        two = self.config.singleWakeUp(one)
-        self.scheduleWakeup(two)
-        return str(two)
+        self.two = self.config.singleWakeUp(one)
+        self.scheduleWakeup(self.two)
+        self.awakelog.info(str(self.two))
+        return str(self.two)
     def schedule(self):
         self.srtd = self.config.getWakeups()
         self.srtd.sort(key=lambda x: x.wake_time)

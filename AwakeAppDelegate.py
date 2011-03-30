@@ -116,12 +116,12 @@ class AwakeAppDelegate(NSObject):
         try:
             lo = st.split("\n")
             try:
-                natural,minv,maxv,fadein,dur = lo
-                H={'start':minv, 'end':maxv,'dur':dur}
+                natural,minv,maxv,dur = lo
+                H={'start':int(minv), 'end':int(maxv),'dur':int(dur)}
             except ValueError:
                 try:
-                    natural,minv,maxv,fadein = lo
-                    H={'start':minv, 'end':maxv}
+                    natural,minv,maxv = lo
+                    H={'start':int(minv), 'end':int(maxv)}
                 except ValueError:
                     import traceback
                     sys.stderr.write(traceback.format_exc())
@@ -129,18 +129,18 @@ class AwakeAppDelegate(NSObject):
                     return "NOTOK %s" % traceback.format_exc()
             newalarm = self.admin.config.naturalParse(natural,H,issingle=True)
             rs = self.admin.scheduleOne(newalarm[0])
-            return "OK %s\n---\n%s" % (str(rs),str(newalarm[1]))
+            self.last_status = "OK %s\n---\n%s" % (str(rs),str(newalarm[1]))
         except:
             import traceback
             sys.stderr.write(traceback.format_exc())
-            return "NOTOK %s" % traceback.format_exc()
+            self.last_status = "NOTOK %s" % traceback.format_exc()
 
     def stop_server_play(self):
         try:
             self.admin.stopCurrentRunning()
-            return "OK %s" % "TRUE"
+            self.last_status = "OK %s" % "TRUE"
         except:
             import traceback
             sys.stderr.write(traceback.format_exc())
-            return "NOTOK %s" % traceback.format_exc()
+            self.last_status=  "NOTOK %s" % traceback.format_exc()
         

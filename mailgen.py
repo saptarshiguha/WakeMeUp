@@ -5,11 +5,13 @@ import time,os,email,re
 ## in pre-sync and post-sync and find emails in between
 SERVERPORT = 8080
 MAILDIR = ("/Users/yanger/MyMail/.songrequest/cur/",)#,"/Users/sguha/MozMail/INBOX/new/")
+# MAILDIR=("/Users/sguha/MozMail/INBOX/new/",)
 TIMEWINDOW = 60
 def checkValidTo(msg):
     to=email.Utils.parseaddr(msg['To'])[1]
     fro=email.Utils.parseaddr(msg['From'])[1]
     return to == "saptarshi.guha+play@gmail.com" and fro=="saptarshi.guha@gmail.com"
+    # return to == "sguha+play@mozilla.com"
 
 def mailViaGmail(to, subject, text,attach=None,gmailuser=os.environ["GMAIL_USER"], gmailpwd=os.environ["GMAIL_PASSWORD"]):
     try:
@@ -50,7 +52,7 @@ def mailViaGmail(to, subject, text,attach=None,gmailuser=os.environ["GMAIL_USER"
 
 def read_body(subject,lines):
     try:
-        results = {'error':False,'info':False,'max':80,'min':0,'fadein':20*60,'when':'in 30 minutes','stop':False}
+        results = {'error':False,'info':False,'max':80,'min':0,'when':'in 30 minutes','stop':False}
         if subject.lower().find("info")>=0 or subject.lower().find("help")>=0:
             results['info']=True
             return results
@@ -66,9 +68,7 @@ def read_body(subject,lines):
                 results['max'] = str(re.split(" ",c,1)[1])
             elif c.startswith("minvol") or c.startswith("volmin") or c.startswith("min"):
                         results['min'] = str(re.split(" ",c,1)[1])
-            elif c.startswith("fade"):
-                results['fadein'] = str(eval(re.split(" ",c,1)[1]))
-            elif c.startswith("stop") or c.startswith("dur"):
+            elif c.startswith("dur"):
                 results['dur'] = str(eval(re.split(" ",c,1)[1]))
             else:
                 pass
@@ -99,7 +99,7 @@ def send_message_to_server(result):
         sock.close()
         return string
     else:
-        x="play %(natural)s\n%(min)s\n%(max)s\n%(fadein)s\n" % result
+        x="play %(natural)s\n%(min)s\n%(max)s\n" % result
         if result.get('dur',None)!=None:
             x="%s%s" % (x, result['dur'])
         sock.send(x)
@@ -115,6 +115,7 @@ def main():
         recent_emails = set.union(old,set([ n+x for x in os.listdir(n) if (curr_time- os.path.getctime(n+x)) < recent_window]))
     recent_emails = list(recent_emails)
     for x in recent_emails:
+        # print x
 ## Scan emails to see which one is to saptarshi.guha+playmusic@gmail.com
         x=open(x,'r')
         p=email.Parser.Parser()

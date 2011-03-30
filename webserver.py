@@ -38,10 +38,13 @@ class MyServer:
             elif request.startswith("play"):
                 pr = request.split(" ",1)[1]
                 self.awakelog.info("User wanted to 'play' : %s" %pr)
-                result =self.appdelegate.run_server_play(pr)
+                ## so bad in threadsafety ...
+                self.appdelegate.performSelectorOnMainThread_withObject_waitUntilDone_("run_server_play",pr,True)
+                result =self.appdelegate.last_status
                 conn.send(result)
             elif request.startswith("stop"):
-                result = self.appdelegate.stop_server_play()
+                self.appdelegate.performSelectorOnMainThread_withObject_waitUntilDone_("stop_server_play",None,True)
+                result =self.appdelegate.last_status
                 conn.send(result)
             else:
                 conn.send("NOTOK Please don't send me rubbish: %s" % request)
