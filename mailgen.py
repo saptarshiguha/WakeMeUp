@@ -120,6 +120,7 @@ def main():
         to_address = email.Utils.parseaddr(msg['To'])[1]
         subject = msg['Subject']
         if checkValidTo(msg):
+            print "Found a valid song request message: %s" % subject
             body= msg.get_payload()
             result = read_body(subject, body.split("\n"))
             if not result['error']:
