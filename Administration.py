@@ -44,6 +44,7 @@ class Administration(NSObject):
         if not rnargs:
             self.running=None
         self.srtd=[]
+        self.awakelog = AwakeLog.alloc().initWithInfo_Logger( {'filename':__name__})
     def play_string(self, stri):
         resstring = ""
         try:
@@ -90,7 +91,7 @@ class Administration(NSObject):
         self.running.fadein['dur']=float(15)
         self.running.start()
     def runPlayer(self, p):
-        print("RUNNING NOW")
+        self.awakelog.info("Will play %s" % p.title)
         self.stopCurrentRunning()
         self.running = p
         self.running.start()
