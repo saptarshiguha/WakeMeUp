@@ -9,7 +9,7 @@ TIMEWINDOW = 60
 def checkValidTo(msg):
     to=email.Utils.parseaddr(msg['To'])[1]
     fro=email.Utils.parseaddr(msg['From'])[1]
-    return to == "saptarshi.guha+play@gmail.com" and from=="saptarshi.guha@gmail.com"
+    return to == "saptarshi.guha+play@gmail.com" and fro=="saptarshi.guha@gmail.com"
 
 def mailViaGmail(to, subject, text,attach=None,gmailuser=os.environ["GMAIL_USER"], gmailpwd=os.environ["GMAIL_PASSWORD"]):
     try:
