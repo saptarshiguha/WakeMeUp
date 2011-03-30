@@ -4,7 +4,7 @@ import time,os,email,re
 ## roughly correspond to recent emails ideally i would record the time
 ## in pre-sync and post-sync and find emails in between
 SERVERPORT = 8080
-MAILDIR = ("/Users/yanger/MyMail/.songrequest/cur",)#,"/Users/sguha/MozMail/INBOX/new/")
+MAILDIR = ("/Users/yanger/MyMail/.songrequest/cur/",)#,"/Users/sguha/MozMail/INBOX/new/")
 TIMEWINDOW = 60
 def checkValidTo(msg):
     return msg['To'] == "saptarshi.guha+play@gmail.com" and msg['From']=="saptarshi.guha@gmail.com"
