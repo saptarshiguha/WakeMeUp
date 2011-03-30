@@ -12,7 +12,7 @@ def checkValidTo(msg):
     fro=email.Utils.parseaddr(msg['From'])[1]
     return to == "saptarshi.guha+play@gmail.com" and fro=="saptarshi.guha@gmail.com"
     # return to == "sguha+play@mozilla.com"
-gmail_name,gmail_pass = open("/Users/mystuff/conf/sec","r").readlines()
+gmail_name,gmail_pass = open("/Users/yanger/mystuff/conf/sec","r").readlines()
 def mailViaGmail(to, subject, text,attach=None,gmailuser=gmail_name, gmailpwd=gmail_pass):
     try:
         import smtplib
