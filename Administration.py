@@ -22,7 +22,8 @@ from PyObjCTools import AppHelper
 import os
 from Configurator import Configurator
 import traceback
-from Utility import HOOKS
+from Utility import *
+
 #def sbapp(name):
 #    workspace=NSWorkspace.sharedWorkspace()
 #    path = workspace.fullPathForApplication_(name)
