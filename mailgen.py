@@ -7,6 +7,8 @@ SERVERPORT = 8080
 MAILDIR = ("/Users/yanger/MyMail/.songrequest/cur/",)#,"/Users/sguha/MozMail/INBOX/new/")
 TIMEWINDOW = 60
 def checkValidTo(msg):
+    print msg
+    print msg['To'],msg['From']
     return msg['To'] == "saptarshi.guha+play@gmail.com" and msg['From']=="saptarshi.guha@gmail.com"
 
 def mailViaGmail(to, subject, text,attach=None,gmailuser=os.environ["GMAIL_USER"], gmailpwd=os.environ["GMAIL_PASSWORD"]):
