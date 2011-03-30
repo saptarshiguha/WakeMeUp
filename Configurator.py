@@ -77,6 +77,11 @@ class Configurator:
         if self.uselog:
             self.awakelog = AwakeLog.alloc().initWithInfo_( {'filename':__name__})
         self.createDataStructures()
+        self.dd = { 'URL': iTunesURL, 'PLAYLIST':iTunesPlaylist, 'SMART': iTunesSmartPlaylist, 'MPlayer':MPlayer,'ACTION':Action
+                    ,'play':self.addPlayable, 'wakeup':self.addWakeup,'run_appscript':runAppScriptCommand,'ENV':self.env
+                    ,'mail_gmail':mailViaGmail,'N':self.naturalParse,'groupname':self.getAName
+                    }
+
     def createDataStructures(self):
         self.playables={}
         self.wakeups = []
@@ -84,16 +89,20 @@ class Configurator:
         self.env={}
         self.getAName = getName()
         
-    def parseConfig(self):
+    def parseConfig(self,fromString=None):
         self.createDataStructures()
-        dd = { 'URL': iTunesURL, 'PLAYLIST':iTunesPlaylist, 'SMART': iTunesSmartPlaylist, 'MPlayer':MPlayer,'ACTION':Action
-               ,'play':self.addPlayable, 'wakeup':self.addWakeup,'run_appscript':runAppScriptCommand,'ENV':self.env
-               ,'mail_gmail':mailViaGmail,'N':self.naturalParse,'groupname':self.getAName
-               }
-        execfile(self.cfile,dd)
-        for k in dd.keys():
+        try:
+            if type(fromString)==str:
+                eval(fromString,self.dd)
+            else:
+                execfile(self.cfile,self.dd)
+        except Exception:
+            sys.stderr.write("some exception in file:%s\n" % traceback.format_exc())
+        self.postParse()
+    def postParse(self):
+        for k in self.dd.keys():
             if k in HOOKS.values():
-                self.env[k]=dd[k]
+                self.env[k]=self.dd[k]
         for i in self.wktmp:
             wakeitem = WakeItem.alloc().init()
             xtra=dict(self.env.items() + i['xtr'].items() )
@@ -103,7 +112,18 @@ class Configurator:
                            ,xtr=xtra)
             self.awakelog.info("%s" % wakeitem)
             self.wakeups.append(wakeitem)
-    
+    def singleWakeUp(self, h):
+        for k in self.dd.keys():
+            if k in HOOKS.values():
+                self.env[k]=self.dd[k]
+        wakeitem = WakeItem.alloc().init()
+        xtra=dict(self.env.items() + h['xtr'].items() )
+        wakeitem.create( title=h['title'], play=h['play']
+                         ,wake_time=h['wake_time'],end_time=h['end_time']
+                         ,fadein=h['fadein'],fadeout=h['fadeout']
+                         ,xtr=xtra)
+        self.awakelog.info("Single Item: %s" % wakeitem)
+        return wakeitem
     def getEnv(self):
         return self.env
     def getWakeups(self):
@@ -122,9 +142,12 @@ class Configurator:
         if self.uselog and x:
             self.awakelog.info("Natural alarm constructed: %s" % str(x))
         if x:
-            self.addWakeup(title=self.getAName.next(),start = x['time'],play = x['play'],days=x['days'],weights=x['weights'],end=x['end'],fadein=fadein,fadeout=fadeout,**kwargs)
+            rv=self.addWakeup(title=self.getAName.next(),start = x['time'],play = x['play'],days=x['days'],weights=x['weights'],end=x['end'],fadein=fadein,fadeout=fadeout,**kwargs)
+            if kwargs.get("issingle",False):
+                return [rv,str(x)]
         else:
             raise Exception("Bad Parsing: %s" % x)
+        return "Parsed:\n %s \n ==== \n Result:\n%s" %(str(c),str(x))
         # print self.wktmp
     def convertIntoPlay(self,pl):
         import re
@@ -313,9 +336,14 @@ class Configurator:
        
         xtr = dict(self.env.items() + kwargs.items() )
         xtr = dict(self.playables[which].extras.items()+xtr.items())
-        self.wktmp.append( {'title':title,'play':self.playables[which]
-                      ,'wake_time':wake_time,'end_time':end_time
-                      ,'fadein':fadein,'fadeout':fadeout,'xtr':xtr})
+        if not xtr.get("issingle",False):
+            self.wktmp.append( {'title':title,'play':self.playables[which]
+                                ,'wake_time':wake_time,'end_time':end_time
+                                ,'fadein':fadein,'fadeout':fadeout,'xtr':xtr})
+        else:
+            return {'title':title,'play':self.playables[which]
+                    ,'wake_time':wake_time,'end_time':end_time
+                    ,'fadein':fadein,'fadeout':fadeout,'xtr':xtr}
                            
 
                                 
@@ -323,3 +351,5 @@ class Configurator:
         
 
 
+## THIS CODE IS A COMPLETE MESS!!!!!!!!!!!!!!!!!!!!
+        

@@ -22,7 +22,7 @@ objc.setVerbose(True)
 import datetime
 import os
 from Utility import *
-
+from webserver import AwakeServer
 class AwakeAppDelegate(NSObject):
     logcontroller = objc.ivar(u"logcontroller")
     def awakeFromNib(self):
@@ -40,7 +40,8 @@ class AwakeAppDelegate(NSObject):
     def applicationDidFinishLaunching_(self, sender):
         if self.admin.getEnv().get(HOOKS['ONFINISHLAUNCH'],None):
             self.admin.getEnv()[HOOKS['ONFINISHLAUNCH']](sender)
-
+        self.server = AwakeServer.alloc().initWithInfo_((self.cfgfile,8080,self))
+        NSThread.detachNewThreadSelector_toTarget_withObject_("startnow",self.server,None)
     def cancelAllPerforms(self):
         # NSObject.cancelPreviousPerformRequestsWithTarget_(self.admin)
         self.admin.cancelRequests()
@@ -72,6 +73,9 @@ class AwakeAppDelegate(NSObject):
         self.admin.stopCurrentRunning((2,sender))
         if(self.admin.getEnv().get(HOOKS['ONQUIT'],None)):
            self.admin.getEnv()[HOOKS['ONQUIT']](sender)
+        if self.server is not None:
+            self.awakelog.info("Terminating Server")
+            self.server.kill_server()
         return True
     def stop_(self,sender):
         self.awakelog.info("Stopping Currently Playing Music")
@@ -107,3 +111,36 @@ class AwakeAppDelegate(NSObject):
         cfg = self.admin.getEnv().get('CONFIG_FILE',self.cfgfile)
         self.awakelog.info("Opening config file:%s" % cfg)
         os.system("open %s" % cfg)
+
+    def run_server_play(self, st):
+        try:
+            lo = st.split("\n")
+            try:
+                natural,minv,maxv,fadein,dur = lo
+                H={'start':minv, 'end':maxv,'dur':dur}
+            except ValueError:
+                try:
+                    natural,minv,maxv,fadein = lo
+                    H={'start':minv, 'end':maxv}
+                except ValueError:
+                    import traceback
+                    sys.stderr.write(traceback.format_exc())
+                    sys.stderr.write(str(st))
+                    return "NOTOK %s" % traceback.format_exc()
+            newalarm = self.admin.config.naturalParse(natural,H,issingle=True)
+            rs = self.admin.scheduleOne(newalarm[0])
+            return "OK %s\n---\n%s" % (str(rs),str(newalarm[1]))
+        except:
+            import traceback
+            sys.stderr.write(traceback.format_exc())
+            return "NOTOK %s" % traceback.format_exc()
+
+    def stop_server_play(self):
+        try:
+            self.admin.stopCurrentRunning()
+            return "OK %s" % "TRUE"
+        except:
+            import traceback
+            sys.stderr.write(traceback.format_exc())
+            return "NOTOK %s" % traceback.format_exc()
+        

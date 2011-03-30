@@ -25,6 +25,7 @@ import time
 import sys
 import copy
 VERSION_ID = 1.0
+SERVER_PORT=8080
 HOOKS={'ONAWAKE':"on_awake"
        ,"ONQUIT":"on_quit"
        ,"ONRELOAD":"on_reload"
@@ -70,7 +71,6 @@ def mailViaGmail(to, subject, text,attach=None,gmailuser=None, gmailpwd=None):
 		msg['Subject'] = subject
 		msg.attach(MIMEText(text))
 		if attach:
-			attach=('~/tmp/*.py','/tmp/togo')
 			if isinstance(attach, str):
 				attach = (attach,)
 			v=[]
@@ -107,6 +107,7 @@ def mailViaGmail(to, subject, text,attach=None,gmailuser=None, gmailpwd=None):
 
 class AwakeLog(NSObject):
 	logcontroller = None
+	toanotherhandle = None
 	def initWithInfo_(self, info):
 		self = super(AwakeLog, self).init()
 		if self is None: return None
@@ -152,6 +153,12 @@ class AwakeLog(NSObject):
 		try:
 			entry1 = u"[%s:%s:%s]"  % ( time.ctime(), str(what), str(self.filename))
 			entry2 = u"%s\n" % str(message)
+			if AwakeLog.toanotherhandle!=None:
+				try:
+					AwakeLog.toanotherhandle.write("%s\n" % str(entry2))
+					return
+				except:
+					pass
 			tv = AwakeLog.logcontroller.getTextView().textStorage()
 
 			arange = (tv.string().length(), 0)
@@ -165,7 +172,11 @@ class AwakeLog(NSObject):
 			tv.setAttributes_range_(self.infodictmessage, arange)
 			AwakeLog.logcontroller.gotoEnd()
 			AwakeLog.logcontroller.refreshWindow()
-			NSLog(str(message))
+
+			try:
+				NSLog(entry2)
+			except:
+				pass
 		except UnicodeDecodeError,ValueError:
 			pass
 

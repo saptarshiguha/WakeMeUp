@@ -189,5 +189,5 @@ class NaturalAlarm:
         return self.oldsubject
 
 # p=NaturalAlarm("play ['foo'] for 2 hrs from 9:30 am every friday")
-p=NaturalAlarm("play ['foo'] at 2:34 pm")
-print p
+#p=NaturalAlarm("play ['foo'] at 2:34 pm")
+#print p

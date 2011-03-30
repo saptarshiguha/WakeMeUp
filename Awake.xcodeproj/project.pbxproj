@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A4D87313405B720066C236 /* webserver.py in Resources */ = {isa = PBXBuildFile; fileRef = 01A4D87213405B720066C236 /* webserver.py */; };
+		01C51B6D13432A9000DB5211 /* mailgen.py in Resources */ = {isa = PBXBuildFile; fileRef = 01C51B6C13432A9000DB5211 /* mailgen.py */; };
 		4D39735A12A8B77F00F6206B /* __init__.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D39735412A8B77F00F6206B /* __init__.py */; };
 		4D39735B12A8B77F00F6206B /* __init__.pyc in Resources */ = {isa = PBXBuildFile; fileRef = 4D39735512A8B77F00F6206B /* __init__.pyc */; };
 		4D39735C12A8B77F00F6206B /* parsedatetime.py in Resources */ = {isa = PBXBuildFile; fileRef = 4D39735612A8B77F00F6206B /* parsedatetime.py */; };
@@ -45,6 +47,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01A4D87213405B720066C236 /* webserver.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = webserver.py; path = ../webserver.py; sourceTree = "<group>"; };
+		01C51B6C13432A9000DB5211 /* mailgen.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = mailgen.py; path = ../mailgen.py; sourceTree = "<group>"; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -190,9 +194,11 @@
 		4D5C7E3410C9C7C900E32800 /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				01A4D87213405B720066C236 /* webserver.py */,
 				4D5C7E3510C9C7C900E32800 /* MPlayer.py */,
 				4D5C7E3610C9C7C900E32800 /* Player.py */,
 				4D5C7E3710C9C7C900E32800 /* Utility.py */,
+				01C51B6C13432A9000DB5211 /* mailgen.py */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -268,6 +274,8 @@
 				4D39735E12A8B77F00F6206B /* parsedatetime_consts.py in Resources */,
 				4D39735F12A8B77F00F6206B /* parsedatetime_consts.pyc in Resources */,
 				4D4AF70D12A9864F00CAFBCC /* naturalAlarm2.py in Resources */,
+				01A4D87313405B720066C236 /* webserver.py in Resources */,
+				01C51B6D13432A9000DB5211 /* mailgen.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

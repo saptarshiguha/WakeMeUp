@@ -44,6 +44,25 @@ class Administration(NSObject):
         if not rnargs:
             self.running=None
         self.srtd=[]
+    def play_string(self, stri):
+        resstring = ""
+        try:
+            import StringIO
+            outlog = StringIO.StringIO()
+            AwakeLog.toanotherhandle = outlog
+            x= self.config.parseConfig(stri)
+            if not x==None:
+                resstring = "%s\n%s" % (x, outlog.getValue())
+                outlog.close()
+            else:
+                self.srtd = []
+                self.schedule()
+        finally:
+            AwakeLog.toanotherhandle = None
+        resstring = outlog.getValue()
+        outlog.close()
+        return resstring
+        ## return a success string
     def stopCurrentRunning(self,info=None):
         if self.running:
             self.running.stop(info)
@@ -80,7 +99,11 @@ class Administration(NSObject):
         current_time =  datetime.datetime.today()
         timedelta = (plyr.wake_time - current_time).seconds
         self.performSelector_withObject_afterDelay_("runPlayer",plyr,timedelta)
-        
+
+    def scheduleOne(self,one):
+        two = self.config.singleWakeUp(one)
+        self.scheduleWakeup(two)
+        return str(two)
     def schedule(self):
         self.srtd = self.config.getWakeups()
         self.srtd.sort(key=lambda x: x.wake_time)
