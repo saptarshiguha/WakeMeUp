@@ -45,7 +45,7 @@ class Administration(NSObject):
         if not rnargs:
             self.running=None
         self.srtd=[]
-        self.awakelog = AwakeLog.alloc().initWithInfo_Logger( {'filename':__name__})
+        self.awakelog = AwakeLog.alloc().initWithInfo_( {'filename':__name__})
     def play_string(self, stri):
         resstring = ""
         try:
