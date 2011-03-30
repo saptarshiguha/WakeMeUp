@@ -90,6 +90,7 @@ class Administration(NSObject):
         self.running.fadein['dur']=float(15)
         self.running.start()
     def runPlayer(self, p):
+        print("RUNNING NOW")
         self.stopCurrentRunning()
         self.running = p
         self.running.start()
