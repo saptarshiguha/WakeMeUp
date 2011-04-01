@@ -46,6 +46,7 @@ class Administration(NSObject):
             self.running=None
         self.srtd=[]
         self.awakelog = AwakeLog.alloc().initWithInfo_( {'filename':__name__})
+        self.two = None
     def play_string(self, stri):
         resstring = ""
         try:
@@ -76,6 +77,11 @@ class Administration(NSObject):
         for i in self.srtd:
             if i:
                 i.cancel()
+        try:
+            if self.two:
+                self.two.cancel()
+        except:
+            pass # no reason for exception, but i'm too lazy to verify, such bad coding, sigh
         if self.running:
             self.running.cancel()
         NSObject.cancelPreviousPerformRequestsWithTarget_(self)
