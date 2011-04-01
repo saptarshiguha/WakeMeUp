@@ -57,10 +57,10 @@ def mailViaGmail(to, subject, text,attach=None,gmailuser=gmail_name, gmailpwd=gm
 def read_body(subject,lines):
     try:
         results = {'error':False,'info':False,'max':80,'min':0,'when':'in 30 minutes','stop':False}
-        if subject.lower().find("info")>=0 or subject.lower().find("help")>=0:
+        if (subject and subject.lower().find("info")>=0) or(subject and  subject.lower().find("help")>=0):
             results['info']=True
             return results
-        if subject.lower().find("stop")>=0 or subject.lower().find("kill")>=0:
+        if (subject and subject.lower().find("stop")>=0) or (subject and subject.lower().find("kill")>=0):
             results['stop'] = True
             return results
         results['natural'] = lines[0].strip()
