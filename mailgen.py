@@ -61,6 +61,7 @@ def read_body(subject,lines):
             return results
         results['natural'] = lines[0].strip()
         for c in lines[1:]:
+            c=c.lower()
             if c.startswith("#"):
                 next
             c = c.strip()
@@ -68,7 +69,7 @@ def read_body(subject,lines):
                 results['max'] = str(re.split(" ",c,1)[1])
             elif c.startswith("minvol") or c.startswith("volmin") or c.startswith("min"):
                         results['min'] = str(re.split(" ",c,1)[1])
-            elif c.startswith("dur"):
+            elif c.startswith("dur") or c.startswith("fade"):
                 results['dur'] = str(eval(re.split(" ",c,1)[1]))
             else:
                 pass
@@ -135,7 +136,8 @@ def main():
                 mailViaGmail(to,"Play-Info:%s" % res,resp)
             else:
                 mailViaGmail(to,"Play-Info:Error",result['errordoc'])
-
+        else:
+            print "Ignored message with subject %s" % subject
 
 if __name__ == "__main__":
     main()

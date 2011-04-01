@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>01A4D87F13405B860066C236</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>AwakeAppDelegate.py</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>01A4D88013405B860066C236</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>AwakeAppDelegate.py</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>01C51B9E1343445A00DB5211</string>
-						<key>history</key>
-						<array>
-							<string>01A4D928134134590066C236</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {750, 461}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 371 750 502 0 0 1440 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -369,19 +328,18 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>01C51B9D1343445A00DB5211</string>
+										<string>01FAA3FF13457DDF0029AFDB</string>
 										<key>history</key>
 										<array>
 											<string>01A4D87713405B860066C236</string>
 											<string>01A4D88A13405CB40066C236</string>
 											<string>01C51AC41343038500DB5211</string>
 											<string>01C51AD11343093D00DB5211</string>
-											<string>01C51AF0134311C500DB5211</string>
 											<string>01C51B05134314AA00DB5211</string>
 											<string>01C51B1113431B0200DB5211</string>
 											<string>01C51B1213431B0200DB5211</string>
 											<string>01C51B1313431B0200DB5211</string>
-											<string>01A4D87613405B860066C236</string>
+											<string>01C51B9D1343445A00DB5211</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -393,14 +351,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1232, 543}}</string>
+								<string>{{0, 0}, {1232, 537}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 95 1440 783 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>543pt</string>
+							<string>537pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -413,14 +371,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 548}, {1232, 194}}</string>
+								<string>{{0, 542}, {1232, 200}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 95 1440 783 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>194pt</string>
+							<string>200pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -439,9 +397,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>01C51ABB1343025700DB5211</string>
+				<string>01FAA40013457DDF0029AFDB</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>01C51ABC1343025700DB5211</string>
+				<string>01FAA40113457DDF0029AFDB</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -579,13 +537,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>01C51ADC1343093D00DB5211</string>
-		<string>01C51ADD1343093D00DB5211</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>01A6CA94131CAA1B003788DB</string>
 		<string>01A4D87F13405B860066C236</string>
-		<string>/Users/sguha/mystuff/programming/WakeMeUp/Awake.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/sguha/mystuff/programming/WakeMeUp/WakeMeUp/Awake.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 95 1440 783 0 0 1440 878 </string>
@@ -665,7 +619,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>01A6CA94131CAA1B003788DB</string>
-				<string>01C51ABF1343025700DB5211</string>
+				<string>01FAA40213457DDF0029AFDB</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
