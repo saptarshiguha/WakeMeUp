@@ -10,7 +10,11 @@ TIMEWINDOW = 60
 def checkValidTo(msg):
     to=email.Utils.parseaddr(msg['To'])[1]
     fro=email.Utils.parseaddr(msg['From'])[1]
-    return to == "saptarshi.guha+play@gmail.com" and fro=="saptarshi.guha@gmail.com"
+    code =  to == "saptarshi.guha+play@gmail.com" and fro=="saptarshi.guha@gmail.com"
+    if(not code):
+        print "Rejected %s:%s" %(to,fro)
+    return code
+
     # return to == "sguha+play@mozilla.com"
 gmail_name,gmail_pass = [x.strip() for x in open("/Users/yanger/mystuff/conf/sec","r").readlines()]
 def mailViaGmail(to, subject, text,attach=None,gmailuser=gmail_name, gmailpwd=gmail_pass):
