@@ -131,12 +131,12 @@ def main():
             print "Found a valid song request message: %s" % subject
             body= msg.get_payload()
             result = read_body(subject, body.split("\n"))
+            if msg['Reply-To']:
+                to = msg['Reply-To']
+            else:
+                to = msg['From']
             if not result['error']:
                 res,resp = send_message_to_server(result).split(" ",1)
-                if msg['Reply-To']:
-                    to = msg['Reply-To']
-                else:
-                    to = msg['From']
                 mailViaGmail(to,"Play-Info:%s" % res,resp)
             else:
                 mailViaGmail(to,"Play-Info:Error",result['errordoc'])
