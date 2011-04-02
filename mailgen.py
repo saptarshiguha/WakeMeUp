@@ -129,7 +129,14 @@ def main():
         subject = msg['Subject']
         if checkValidTo(msg):
             print "Found a valid song request message: %s" % subject
-            body= msg.get_payload()
+            body0= msg.get_payload()
+            body = body0
+            if body0.__class__==list:
+                ## multipart message loop till we get text/plain
+                for i in body0:
+                    if i.get_content_type() == "text/plain":
+                        body= i.get_payload()
+                        break
             result = read_body(subject, body.split("\n"))
             if msg['Reply-To']:
                 to = msg['Reply-To']
