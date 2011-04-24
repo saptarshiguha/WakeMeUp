@@ -181,6 +181,7 @@ class NaturalAlarm:
             import uuid
             self.oldsubject = mo.group(0)
             return ""
+        self.word = re.sub('(minutes|minute)',lambda x: 'mins', self.word)
         self.word = re.sub('["]([^"]*)["]',repme1,self.word) #raplace things in quote, protects stange characters
         self.word = re.sub('[\[]([^\[]*)[\]]',repme2,self.word) # replace the subject
         #by this time we have play X at Time every blah untill blah where X=[...]

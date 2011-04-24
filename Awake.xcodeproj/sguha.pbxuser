@@ -86,15 +86,15 @@
 		isa = PBXBookmark;
 		fRef = 01C51B6C13432A9000DB5211 /* mailgen.py */;
 	};
-	01B27FAD1346D687007C6A05 /* PBXTextBookmark */ = {
+	01B27FB21346D9CF007C6A05 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 01C51B6C13432A9000DB5211 /* mailgen.py */;
-		name = "mailgen.py: 2";
-		rLen = 24;
-		rLoc = 18;
+		name = "mailgen.py: 155";
+		rLen = 0;
+		rLoc = 5771;
 		rType = 0;
-		vrLen = 1578;
-		vrLoc = 0;
+		vrLen = 1539;
+		vrLoc = 3970;
 	};
 	01C51AC41343038500DB5211 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -146,21 +146,11 @@
 		vrLen = 1993;
 		vrLoc = 1304;
 	};
-	01C51B1313431B0200DB5211 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 4D5C7E3810C9C7C900E32800 /* Administration.py */;
-		name = "Administration.py: 43";
-		rLen = 11;
-		rLoc = 1656;
-		rType = 0;
-		vrLen = 1391;
-		vrLoc = 2494;
-	};
 	01C51B6C13432A9000DB5211 /* mailgen.py */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1171, 1924}}";
-			sepNavSelRange = "{18, 24}";
-			sepNavVisRange = "{0, 1578}";
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 2041}}";
+			sepNavSelRange = "{5771, 0}";
+			sepNavVisRange = "{3970, 1539}";
 		};
 	};
 	01FAA40413462E460029AFDB /* PBXTextBookmark */ = {
@@ -182,16 +172,6 @@
 		rType = 0;
 		vrLen = 2043;
 		vrLoc = 1524;
-	};
-	01FAA40613462E460029AFDB /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 4D5C7E3810C9C7C900E32800 /* Administration.py */;
-		name = "Administration.py: 123";
-		rLen = 0;
-		rLoc = 4402;
-		rType = 0;
-		vrLen = 1393;
-		vrLoc = 2422;
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
@@ -231,20 +211,18 @@
 			PBXWorkspaceStateSaveDate = 323409524;
 		};
 		perUserProjectItems = {
-			01A4D87713405B860066C236 = 01A4D87713405B860066C236 /* PBXTextBookmark */;
-			01A4D88A13405CB40066C236 = 01A4D88A13405CB40066C236 /* PBXTextBookmark */;
+			01A4D87713405B860066C236 /* PBXTextBookmark */ = 01A4D87713405B860066C236 /* PBXTextBookmark */;
+			01A4D88A13405CB40066C236 /* PBXTextBookmark */ = 01A4D88A13405CB40066C236 /* PBXTextBookmark */;
 			01B27FAB1346D687007C6A05 /* PBXTextBookmark */ = 01B27FAB1346D687007C6A05 /* PBXTextBookmark */;
 			01B27FAC1346D687007C6A05 /* PBXBookmark */ = 01B27FAC1346D687007C6A05 /* PBXBookmark */;
-			01B27FAD1346D687007C6A05 /* PBXTextBookmark */ = 01B27FAD1346D687007C6A05 /* PBXTextBookmark */;
-			01C51AC41343038500DB5211 = 01C51AC41343038500DB5211 /* PBXTextBookmark */;
-			01C51AD11343093D00DB5211 = 01C51AD11343093D00DB5211 /* PBXTextBookmark */;
-			01C51B05134314AA00DB5211 = 01C51B05134314AA00DB5211 /* PBXTextBookmark */;
-			01C51B1113431B0200DB5211 = 01C51B1113431B0200DB5211 /* PBXTextBookmark */;
-			01C51B1213431B0200DB5211 = 01C51B1213431B0200DB5211 /* PBXTextBookmark */;
-			01C51B1313431B0200DB5211 = 01C51B1313431B0200DB5211 /* PBXTextBookmark */;
-			01FAA40413462E460029AFDB = 01FAA40413462E460029AFDB /* PBXTextBookmark */;
-			01FAA40513462E460029AFDB = 01FAA40513462E460029AFDB /* PBXTextBookmark */;
-			01FAA40613462E460029AFDB = 01FAA40613462E460029AFDB /* PBXTextBookmark */;
+			01B27FB21346D9CF007C6A05 /* PBXTextBookmark */ = 01B27FB21346D9CF007C6A05 /* PBXTextBookmark */;
+			01C51AC41343038500DB5211 /* PBXTextBookmark */ = 01C51AC41343038500DB5211 /* PBXTextBookmark */;
+			01C51AD11343093D00DB5211 /* PBXTextBookmark */ = 01C51AD11343093D00DB5211 /* PBXTextBookmark */;
+			01C51B05134314AA00DB5211 /* PBXTextBookmark */ = 01C51B05134314AA00DB5211 /* PBXTextBookmark */;
+			01C51B1113431B0200DB5211 /* PBXTextBookmark */ = 01C51B1113431B0200DB5211 /* PBXTextBookmark */;
+			01C51B1213431B0200DB5211 /* PBXTextBookmark */ = 01C51B1213431B0200DB5211 /* PBXTextBookmark */;
+			01FAA40413462E460029AFDB /* PBXTextBookmark */ = 01FAA40413462E460029AFDB /* PBXTextBookmark */;
+			01FAA40513462E460029AFDB /* PBXTextBookmark */ = 01FAA40513462E460029AFDB /* PBXTextBookmark */;
 		};
 		sourceControlManager = 01A6CA96131CAA1B003788DB /* Source Control */;
 		userBuildSettings = {
